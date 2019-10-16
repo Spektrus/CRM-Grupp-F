@@ -1,3 +1,50 @@
-body {
-    font-family: "Arial", sans-serif;
+@import url('https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed&display=swap');
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Roboto Condensed", "Arial", sans-serif;
+}
+main {
+  margin: 16.66666667px;
+}
+main h1 {
+  font-size: 40px;
+}
+main h2 {
+  font-size: 28px;
+}
+.eventCard {
+  font-size: 15px;
+  font-family: "Roboto", "Arial", sans-serif;
+  width: 500px;
+  border: 2px solid black;
+  border-radius: 2px;
+  margin-bottom: 15px;
+  padding: 5px;
+  box-shadow: 5px 5px 0px 0px;
+  overflow: auto;
+}
+.eventCard img {
+  width: 28px;
+  height: 28px;
+}
+.eventCard img.left {
+  margin-right: 10px;
+}
+.eventCard span,
+.eventCard .right {
+  float: right;
+}
+.eventCard h3,
+.eventCard .left {
+  float: left;
+}
+.eventCard span {
+  margin-top: 8px;
+}
+.eventCard p {
+  clear: both;
 }
