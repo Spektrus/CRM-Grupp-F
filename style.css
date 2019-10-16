@@ -56,12 +56,19 @@ main h2 {
   font-size: 15px;
   font-family: "Roboto", "Arial", sans-serif;
   width: 500px;
-  border: 2px solid grey;
+  border: 2px solid  rgb(27, 29, 32);
   border-radius: 2px;
   margin-bottom: 15px;
   padding: 5px;
   overflow: auto;
   background-color: rgb(35, 37, 41);
+}
+
+.btn {
+  font-family: "Roboto Condensed";
+  background-color: #02708A;
+  border: 2px solid rgb(35, 37, 41);
+  color: black;
 }
 .eventCard img {
   width: 28px;
