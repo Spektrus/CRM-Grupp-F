@@ -16,6 +16,9 @@ class CRM {
         });
         
     }
+    createUser(tfn, namn, dob, email) {
+        document
+    }
 
 }
 

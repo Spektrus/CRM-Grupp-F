@@ -6,10 +6,46 @@ h4,
 h5,
 h6 {
   font-family: "Roboto Condensed", "Arial", sans-serif;
+  color: #31e89f;
+}
+
+h3 {
+  color: #31c6e8;
+}
+
+body {
+  background-color: rgb(43, 45, 48);
+  color: #ccc;
 }
 main {
   margin: 16.66666667px;
 }
+
+.navbar {
+  background-color: rgb(35, 37, 41);
+  
+}
+
+.nav-item {
+  font-size: 20px;
+  font-family: "Roboto";
+}
+
+.nav-item a {
+  color: #31c6e8 !important;
+}
+
+.nav-item a:hover {
+  color: red;
+  text-decoration: underline;
+}
+
+#logo {
+  height: 45px;
+  width: 45px;
+  margin-right: 10px;
+}
+
 main h1 {
   font-size: 40px;
 }
@@ -20,12 +56,12 @@ main h2 {
   font-size: 15px;
   font-family: "Roboto", "Arial", sans-serif;
   width: 500px;
-  border: 2px solid black;
+  border: 2px solid grey;
   border-radius: 2px;
   margin-bottom: 15px;
   padding: 5px;
-  box-shadow: 5px 5px 0px 0px;
   overflow: auto;
+  background-color: rgb(35, 37, 41);
 }
 .eventCard img {
   width: 28px;
