@@ -11,14 +11,16 @@ h1, h2, h3, h4, h5, h6 {
     font-family: $fontHeading;
 }
 
-.navbar {
-    background-color: #31c6e8;
+body {
+    background-color: colors.$lightDark;
+    font-family: $fontBody;
+    color: colors.$textColor;
 }
 
-main {
-    margin: $eventWidth / 30;
+main { 
+    margin: 17px;
     h1 {
-        font-size: 39px;
+        font-size: 40px;
         color: colors.$titleColor;
     }
     h2 {
@@ -26,7 +28,27 @@ main {
     }
 }
 
-.eventCard {
+.navbar { // NAVBAR
+    background-color: colors.$darkerDark;
+    .nav-item {
+        font-size: 20px;
+        font-family: $fontHeading;
+    }
+    a {
+        color: colors.$subTitleColor;
+    }
+    a:hover {
+        color: colors.$titleColor;
+    }
+
+    #logo {
+        height: 45px;
+        width: 45px;
+        margin-right: 10px;
+    }
+}
+
+.eventCard { // upcoming events
     font-size: $bodyText;
     font-family: $fontBody;
     width: $eventWidth;
@@ -34,8 +56,8 @@ main {
     border-radius: 2px;
     margin-bottom: 15px;
     padding: 5px;
-    box-shadow: 5px 5px 0px 0px;
     overflow: auto;
+    background-color: colors.$darkerDark;
     img {
         width: $iconSize;
         height: $iconSize;
@@ -57,6 +79,7 @@ main {
     }
 }
 
-span {
-    color: colors.$textColor;
-}
+.btn { // buttons
+    background-color: colors.$subTitleColor;
+    border: 2px solid colors.$borderColor;
+  }

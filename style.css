@@ -1,74 +1,54 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed&display=swap');
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+@import url("https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed&display=swap");
+h1, h2, h3, h4, h5, h6 {
   font-family: "Roboto Condensed", "Arial", sans-serif;
-  color: #31e89f;
-}
-
-h3 {
-  color: #31c6e8;
 }
 
 body {
-  background-color: rgb(43, 45, 48);
+  background-color: #2B2D30;
+  font-family: "Roboto", "Arial", sans-serif;
   color: #ccc;
 }
+
 main {
-  margin: 16.66666667px;
+  margin: 17px;
+}
+main h1 {
+  font-size: 40px;
+  color: #31e89f;
+}
+main h2 {
+  font-size: 28px;
 }
 
 .navbar {
-  background-color: rgb(35, 37, 41);
-  
+  background-color: #232529;
 }
-
-.nav-item {
+.navbar .nav-item {
   font-size: 20px;
-  font-family: "Roboto";
+  font-family: "Roboto Condensed", "Arial", sans-serif;
 }
-
-.nav-item a {
-  color: #31c6e8 !important;
+.navbar a {
+  color: #31c6e8;
 }
-
-.nav-item a:hover {
-  color: red;
-  text-decoration: underline;
+.navbar a:hover {
+  color: #31e89f;
 }
-
-#logo {
+.navbar #logo {
   height: 45px;
   width: 45px;
   margin-right: 10px;
 }
 
-main h1 {
-  font-size: 40px;
-}
-main h2 {
-  font-size: 28px;
-}
 .eventCard {
   font-size: 15px;
   font-family: "Roboto", "Arial", sans-serif;
   width: 500px;
-  border: 2px solid  rgb(27, 29, 32);
+  border: 2px solid black;
   border-radius: 2px;
   margin-bottom: 15px;
   padding: 5px;
   overflow: auto;
-  background-color: rgb(35, 37, 41);
-}
-
-.btn {
-  font-family: "Roboto Condensed";
-  background-color: #02708A;
-  border: 2px solid rgb(35, 37, 41);
-  color: black;
+  background-color: #232529;
 }
 .eventCard img {
   width: 28px;
@@ -77,12 +57,10 @@ main h2 {
 .eventCard img.left {
   margin-right: 10px;
 }
-.eventCard span,
-.eventCard .right {
+.eventCard span, .eventCard .right {
   float: right;
 }
-.eventCard h3,
-.eventCard .left {
+.eventCard h3, .eventCard .left {
   float: left;
 }
 .eventCard span {
@@ -91,3 +69,10 @@ main h2 {
 .eventCard p {
   clear: both;
 }
+
+.btn {
+  background-color: #31c6e8;
+  border: 2px solid #1B1D20;
+}
+
+/*# sourceMappingURL=style.css.map */
