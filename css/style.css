@@ -145,4 +145,18 @@ tbody tr:hover {
   margin-bottom: 1rem;
 }
 
+img {
+  height: 10%;
+  width: 10%;
+  margin: 1rem 1rem;
+}
+
+.logininput {
+  margin-bottom: 1rem;
+}
+
+.login_wrap {
+  margin-top: 15%;
+}
+
 /*# sourceMappingURL=style.css.map */
