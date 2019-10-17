@@ -88,8 +88,9 @@ main h2 {
 .eventCard span, .eventCard .right {
   float: right;
 }
-.eventCard h3, .eventCard .left {
+.eventCard h3 {
   float: left;
+  color: #31c6e8;
 }
 .eventCard span {
   margin-top: 8px;

@@ -96,8 +96,9 @@ main {
     span, .right {
         float: right;
     }
-    h3, .left {
+    h3 {
         float: left;
+        color: colors.$subTitleColor;
     }
     span {
         margin-top: 8px;
