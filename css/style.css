@@ -125,4 +125,24 @@ main h2 {
   box-shadow: none;
 }
 
+td {
+  color: #ccc;
+}
+
+th {
+  color: #31e89f;
+}
+
+.selectCustomer {
+  background-color: rgba(49, 232, 159, 0.28);
+}
+
+tbody tr:hover {
+  background-color: rgba(49, 232, 159, 0.28);
+}
+
+.modal-body input {
+  margin-bottom: 1rem;
+}
+
 /*# sourceMappingURL=style.css.map */
