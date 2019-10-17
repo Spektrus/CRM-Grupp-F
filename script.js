@@ -27,8 +27,7 @@ CRM.createCustomers(10);
 
 $(function () {
     $('[data-toggle="popover"]').popover({
-        trigger: 'focus',
-        placement: "bottom"
+        trigger: 'focus'
     })
     
 })
