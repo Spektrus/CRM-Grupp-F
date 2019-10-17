@@ -136,3 +136,25 @@ main {
     outline: none;
     box-shadow: none;
 }
+
+
+// Styles in customer
+td{
+    color: colors.$textColor;
+}
+
+th {
+    color: colors.$titleColor;
+}
+
+.selectCustomer {
+    background-color: rgba(49, 232, 159, 0.28);
+}
+
+tbody tr:hover {
+    background-color: rgba(49, 232, 159, 0.28);
+}
+
+.modal-body input {
+    margin-bottom: 1rem;
+}
