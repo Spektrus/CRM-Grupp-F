@@ -8,7 +8,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 
 <body>
@@ -42,9 +42,14 @@
             <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptates, facere? Eaque excepturi sunt ad
                 pariatur tempore, ipsam atque, cupiditate nemo quibusdam dolorem corrupti laudantium at exercitationem.
                 Illum nulla incidunt maxime?</p>
-            <img class="left" src="../images/phone.png">
-            <img class="left" src="../images/mail.png">
-            <img class="right" src="../images/more.png">
+            <a tabindex="0" data-toggle="popover" data-placement="bottom" data-html="true"
+                data-content="<a href='#'>Call with phone</a><br><a href='#'>Call with Skype</a>"><img
+                    src="../images/phone.png"></a>
+            <a href="mailto:jessica@alba.com"><img src="../images/mail.png"></a>
+            <a tabindex="0" data-toggle="popover" data-placement="auto" class="right" data-html="true"
+                data-content="<a href='#'>Edit event</a><br><a href='#'>Delete event</a>"><img class="right"
+                    src="../images/more.png"></a>
+
         </div>
         <div class="eventCard">
             <h3 class="eventTitle">Call Jessica</h3>
@@ -52,11 +57,38 @@
             <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptates, facere? Eaque excepturi sunt ad
                 pariatur tempore, ipsam atque, cupiditate nemo quibusdam dolorem corrupti laudantium at exercitationem.
                 Illum nulla incidunt maxime?</p>
-            <img class="left" src="../images/phone.png">
-            <img class="left" src="../images/mail.png">
-            <img class="right" src="../images/more.png">
+            <a tabindex="0" data-toggle="popover" data-placement="bottom" data-html="true"
+                data-content="<a href='#'>Call with phone</a><br><a href='#'>Call with Skype</a>"><img class="phone"
+                    src="../images/phone.png"></a>
+            <a href="mailto:jessica@alba.com"><img class="email" src="../images/mail.png"></a>
+            <a tabindex="0" data-toggle="popover" data-placement="auto" class="right" data-html="true"
+                data-content="<a href='#'>Edit event</a><br><a href='#'>Delete event</a>"><img class="right more"
+                    src="../images/more.png"></a>
         </div>
-        <button class="btn">Hejsan</button>
+        <button type="button" class="btn" data-target="#addNewEvent" data-toggle="modal">Add new event</button>
+        <div class="modal fade" id="addNewEvent" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="addNewEventLabel">Add new event</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <input class="form-control" type="text" placeholder="First name">
+                        <input class="form-control" type="text" placeholder="Last name">
+                        <input class="form-control" type="text" placeholder="Phone">
+                        <input class="form-control" type="text" placeholder="Email">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn" data-dismiss="modal">Cancel</button>
+                        <button type="button" id="addEvent" class="btn">Add event</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </main>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>

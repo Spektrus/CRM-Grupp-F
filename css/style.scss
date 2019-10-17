@@ -17,6 +17,33 @@ body {
     color: colors.$textColor;
 }
 
+a {
+    color: colors.$subTitleColor;
+    
+}
+
+a:hover {
+    color: colors.$titleColor;
+    text-decoration: none;
+}
+
+.popover, .modal-content {
+    background-color: colors.$darkerDark;
+    border: 2px solid colors.$borderColor;
+    input[type=text] {
+        background-color: #ddd;
+        color: black;
+    }
+    .close {
+        color: colors.$subTitleColor;
+        opacity: 1;
+        text-shadow: none;
+    }
+    .close:hover {
+        color: colors.$titleColor;
+    }
+}
+
 main { 
     margin: 17px;
     h1 {
@@ -34,17 +61,19 @@ main {
         font-size: 20px;
         font-family: $fontHeading;
     }
-    a {
-        color: colors.$subTitleColor;
-    }
-    a:hover {
-        color: colors.$titleColor;
-    }
-
     #logo {
         height: 45px;
         width: 45px;
         margin-right: 10px;
+    }
+    .active a {
+        color: colors.$titleColor;
+    }
+    .navbar-toggler-icon { // change color on hamburger menu
+        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(49,198,232, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+    }
+    .navbar-toggler-icon:hover {
+        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(49,232,159,1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
     }
 }
 
@@ -56,7 +85,6 @@ main {
     border-radius: 2px;
     margin-bottom: 15px;
     padding: 5px;
-    overflow: auto;
     background-color: colors.$darkerDark;
     img {
         width: $iconSize;
@@ -77,9 +105,33 @@ main {
     p {
         clear: both;
     }
+    a:hover {
+        cursor: pointer;
+    }
+}
+
+#addNewEvent {
+    .form-control {
+        border: 2px solid colors.$borderColor;
+        color: black;
+        margin-bottom: 10px;
+    }
+
 }
 
 .btn { // buttons
     background-color: colors.$subTitleColor;
     border: 2px solid colors.$borderColor;
-  }
+    color: black;
+    :hover {
+        background-color: colors.$titleColor;
+    }
+}
+.btn:hover {
+    background-color: colors.$titleColor;
+}
+
+.btn:focus, button:focus, a:focus, input[type=text] {
+    outline: none;
+    box-shadow: none;
+}

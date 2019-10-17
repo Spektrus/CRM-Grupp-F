@@ -9,6 +9,32 @@ body {
   color: #ccc;
 }
 
+a {
+  color: #31c6e8;
+}
+
+a:hover {
+  color: #31e89f;
+  text-decoration: none;
+}
+
+.popover, .modal-content {
+  background-color: #232529;
+  border: 2px solid #1B1D20;
+}
+.popover input[type=text], .modal-content input[type=text] {
+  background-color: #ddd;
+  color: black;
+}
+.popover .close, .modal-content .close {
+  color: #31c6e8;
+  opacity: 1;
+  text-shadow: none;
+}
+.popover .close:hover, .modal-content .close:hover {
+  color: #31e89f;
+}
+
 main {
   margin: 17px;
 }
@@ -27,16 +53,19 @@ main h2 {
   font-size: 20px;
   font-family: "Roboto Condensed", "Arial", sans-serif;
 }
-.navbar a {
-  color: #31c6e8;
-}
-.navbar a:hover {
-  color: #31e89f;
-}
 .navbar #logo {
   height: 45px;
   width: 45px;
   margin-right: 10px;
+}
+.navbar .active a {
+  color: #31e89f;
+}
+.navbar .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(49,198,232, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+.navbar .navbar-toggler-icon:hover {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(49,232,159,1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
 }
 
 .eventCard {
@@ -47,7 +76,6 @@ main h2 {
   border-radius: 2px;
   margin-bottom: 15px;
   padding: 5px;
-  overflow: auto;
   background-color: #232529;
 }
 .eventCard img {
@@ -69,10 +97,32 @@ main h2 {
 .eventCard p {
   clear: both;
 }
+.eventCard a:hover {
+  cursor: pointer;
+}
+
+#addNewEvent .form-control {
+  border: 2px solid #1B1D20;
+  color: black;
+  margin-bottom: 10px;
+}
 
 .btn {
   background-color: #31c6e8;
   border: 2px solid #1B1D20;
+  color: black;
+}
+.btn :hover {
+  background-color: #31e89f;
+}
+
+.btn:hover {
+  background-color: #31e89f;
+}
+
+.btn:focus, button:focus, a:focus, input[type=text] {
+  outline: none;
+  box-shadow: none;
 }
 
 /*# sourceMappingURL=style.css.map */
