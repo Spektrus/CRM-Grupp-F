@@ -20,7 +20,7 @@ addButton.addEventListener("click", e => {
 
     addCustomerToTableArray(firstName, lastName, phone, email, additional);
 
-    printCutomerToTable(firstName, lastName, phone, email);
+    printCustomerToTable(firstName, lastName, phone, email);
 
     console.log(customerTableArray);
     addButton.setAttribute("data-dismiss", "modal");
@@ -45,7 +45,7 @@ function addCustomerToTableArray(first, last, phone, email, additional){
     customerTableArray.push(objC);
 }
 
-function printCutomerToTable(first, last, phone, email) {
+function printCustomerToTable(first, last, phone, email) {
     let trow = document.createElement("tr");
     let tRowNumber = document.createElement("th");
     let n = document.createElement("td");

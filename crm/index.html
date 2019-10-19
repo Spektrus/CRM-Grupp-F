@@ -36,34 +36,38 @@
     </header>
     <main>
         <h1>Upcoming events</h1>
-        <div class="eventCard">
-            <h3 class="eventTitle">Call Jessica</h3>
-            <span>Oct 20, 19:00</span>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptates, facere? Eaque excepturi sunt ad
-                pariatur tempore, ipsam atque, cupiditate nemo quibusdam dolorem corrupti laudantium at exercitationem.
-                Illum nulla incidunt maxime?</p>
-            <a tabindex="0" data-toggle="popover" data-placement="bottom" data-html="true"
-                data-content="<a href='#'>Call with phone</a><br><a href='#'>Call with Skype</a>"><img
-                    src="../images/phone.png"></a>
-            <a href="mailto:jessica@alba.com"><img src="../images/mail.png"></a>
-            <a tabindex="0" data-toggle="popover" data-placement="auto" class="right" data-html="true"
-                data-content="<a href='#'>Edit event</a><br><a href='#'>Delete event</a>"><img class="right"
-                    src="../images/more.png"></a>
+        <div id="events">
+            <div class="eventCard">
+                <h3 class="eventTitle">Call Jessica</h3>
+                <span>October 20, 19:00</span>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptates, facere? Eaque excepturi sunt ad
+                    pariatur tempore, ipsam atque, cupiditate nemo quibusdam dolorem corrupti laudantium at
+                    exercitationem.
+                    Illum nulla incidunt maxime?</p>
+                <a tabindex="0" data-toggle="popover" data-placement="bottom" data-html="true"
+                    data-content="<a href='#'>Call with phone</a><br><a href='#'>Call with Skype</a>"><img class="phone"
+                        src="../images/phone.png"></a>
+                <a href="mailto:jessica@alba.com"><img src="../images/mail.png"></a>
+                <a tabindex="0" data-toggle="popover" data-placement="right" class="right" data-html="true"
+                    data-content="<a href='#'>Edit event</a><br><a href='#'>Delete event</a>"><img class="right"
+                        src="../images/more.png"></a>
 
-        </div>
-        <div class="eventCard">
-            <h3 class="eventTitle">Call Jessica</h3>
-            <span>Oct 20, 19:00</span>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptates, facere? Eaque excepturi sunt ad
-                pariatur tempore, ipsam atque, cupiditate nemo quibusdam dolorem corrupti laudantium at exercitationem.
-                Illum nulla incidunt maxime?</p>
-            <a tabindex="0" data-toggle="popover" data-placement="bottom" data-html="true"
-                data-content="<a href='#'>Call with phone</a><br><a href='#'>Call with Skype</a>"><img class="phone"
-                    src="../images/phone.png"></a>
-            <a href="mailto:jessica@alba.com"><img class="email" src="../images/mail.png"></a>
-            <a tabindex="0" data-toggle="popover" data-placement="auto" class="right" data-html="true"
-                data-content="<a href='#'>Edit event</a><br><a href='#'>Delete event</a>"><img class="right more"
-                    src="../images/more.png"></a>
+            </div>
+            <div class="eventCard">
+                <h3 class="eventTitle">Call Jessica</h3>
+                <span>October 25, 12:00</span>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptates, facere? Eaque excepturi sunt ad
+                    pariatur tempore, ipsam atque, cupiditate nemo quibusdam dolorem corrupti laudantium at
+                    exercitationem.
+                    Illum nulla incidunt maxime?</p>
+                <a tabindex="0" data-toggle="popover" data-placement="bottom" data-html="true"
+                    data-content="<a href='#'>Call with phone</a><br><a href='#'>Call with Skype</a>"><img class="phone"
+                        src="../images/phone.png"></a>
+                <a href="mailto:jessica@alba.com"><img class="email" src="../images/mail.png"></a>
+                <a tabindex="0" data-toggle="popover" data-placement="right" class="right" data-html="true"
+                    data-content="<a href='#'>Edit event</a><br><a href='#'>Delete event</a>"><img class="right more"
+                        src="../images/more.png"></a>
+            </div>
         </div>
         <button type="button" class="btn" data-target="#addNewEvent" data-toggle="modal">Add new event</button>
         <div class="modal fade" id="addNewEvent" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
@@ -76,11 +80,13 @@
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-                    <div class="modal-body">
-                        <input class="form-control" type="text" placeholder="First name">
-                        <input class="form-control" type="text" placeholder="Last name">
-                        <input class="form-control" type="text" placeholder="Phone">
-                        <input class="form-control" type="text" placeholder="Email">
+                    <div class="modal-body" id="addEventModal">
+                        <input class="form-control" id="eventTitle" type="text" maxlength="25" placeholder="Title">
+                        <input class="form-control" id="eventPerson" type="text" placeholder="Placeholder choosing customers">
+                        <input class="form-control" id="eventDate" type="text" placeholder="Date">
+                        <input class="form-control" id="evenTime" type="time" placeholder="Date">
+                        <textarea class="form-control" id="eventTextArea" rows="5" cols="50"
+                            placeholder="Text..."></textarea>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn" data-dismiss="modal">Cancel</button>
@@ -98,6 +104,8 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
     </script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
+        integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
     <script src="../script.js"></script>
 </body>
 

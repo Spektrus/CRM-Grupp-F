@@ -22,7 +22,7 @@ a:hover {
   background-color: #232529;
   border: 2px solid #1B1D20;
 }
-.popover input[type=text], .modal-content input[type=text] {
+.popover input, .popover textarea, .modal-content input, .modal-content textarea {
   background-color: #ddd;
   color: black;
 }
@@ -77,12 +77,13 @@ main h2 {
   margin-bottom: 15px;
   padding: 5px;
   background-color: #232529;
+  overflow: auto;
 }
 .eventCard img {
   width: 28px;
   height: 28px;
 }
-.eventCard img.left {
+.eventCard img.phone {
   margin-right: 10px;
 }
 .eventCard span, .eventCard .right {
@@ -102,10 +103,20 @@ main h2 {
   cursor: pointer;
 }
 
+.ui-datepicker {
+  background-color: #2B2D30;
+  padding: 5px;
+  border: 2px solid #1B1D20;
+  display: none;
+}
+
 #addNewEvent .form-control {
   border: 2px solid #1B1D20;
   color: black;
   margin-bottom: 10px;
+}
+#addNewEvent textarea {
+  height: auto;
 }
 
 .btn {
