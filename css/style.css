@@ -21,7 +21,13 @@ a:hover {
 .popover, .modal-content {
   background-color: #232529;
   border: 2px solid #1B1D20;
-  color: #ccc;
+}
+.popover .popover-body, .modal-content .popover-body {
+  color: #ccc !important;
+}
+.popover .popover-header, .modal-content .popover-header {
+  background-color: #232529;
+  color: #31c6e8;
 }
 .popover input, .popover textarea, .modal-content input, .modal-content textarea {
   background-color: #ddd;
