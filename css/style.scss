@@ -30,6 +30,7 @@ a:hover {
 .popover, .modal-content { // modal, popovers
     background-color: colors.$darkerDark;
     border: 2px solid colors.$borderColor;
+    color: colors.$textColor;
     input, textarea {
         background-color: #ddd;
         color: black;

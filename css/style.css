@@ -21,6 +21,7 @@ a:hover {
 .popover, .modal-content {
   background-color: #232529;
   border: 2px solid #1B1D20;
+  color: #ccc;
 }
 .popover input, .popover textarea, .modal-content input, .modal-content textarea {
   background-color: #ddd;
@@ -169,12 +170,6 @@ tbody tr:hover {
 
 .login_wrap {
   margin-top: 15%;
-}
-
-.container_history{
-
- margin-top: 3px;
- margin-right: 5%;
 }
 
 /*# sourceMappingURL=style.css.map */
