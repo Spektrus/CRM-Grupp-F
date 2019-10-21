@@ -75,39 +75,104 @@ main h2 {
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(49,232,159,1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
 }
 
-.eventCard {
+#calendar .month {
+  border: 2px solid #1B1D20;
+  padding: 70px 25px;
+  width: 100%;
+  background: #232529;
+  text-align: center;
+}
+#calendar .month #calendarYear {
+  color: #31c6e8;
+}
+#calendar .month #calendarMonth {
+  color: #31e89f;
+}
+#calendar .month ul {
+  margin: 0;
+  padding: 0;
+}
+#calendar .month ul li {
+  font-size: 20px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+#calendar .month .prev {
+  float: left;
+  padding-top: 10px;
+}
+#calendar .month .next {
+  float: right;
+  padding-top: 10px;
+}
+#calendar .weekdays {
+  border-right: 2px solid #1B1D20;
+  border-left: 2px solid #1B1D20;
+  margin: 0;
+  padding: 10px 0;
+  background-color: #2B2D30;
+}
+#calendar .weekdays li {
+  display: inline-block;
+  width: 13.6%;
+  color: #31c6e8;
+  text-align: center;
+}
+#calendar .days {
+  border: 2px solid #1B1D20;
+  padding: 10px 0;
+  background: #232529;
+  margin: 0;
+}
+#calendar .days li {
+  display: inline-block;
+  width: 13.6%;
+  text-align: center;
+  margin-bottom: 5px;
+}
+#calendar .days li .active {
+  padding: 5px;
+  color: #31e89f;
+}
+#calendar li {
+  list-style: none;
+}
+
+#events .eventCard {
   font-size: 15px;
   font-family: "Roboto", "Arial", sans-serif;
-  width: 500px;
-  border: 2px solid black;
+  border: 2px solid #1B1D20;
   border-radius: 2px;
   margin-bottom: 15px;
   padding: 5px;
   background-color: #232529;
   overflow: auto;
 }
-.eventCard img {
+#events .eventCard img {
   width: 28px;
   height: 28px;
 }
-.eventCard img.phone {
+#events .eventCard img.phone {
   margin-right: 10px;
 }
-.eventCard span, .eventCard .right {
+#events .eventCard span, #events .eventCard .right {
   float: right;
 }
-.eventCard h3 {
+#events .eventCard h3 {
   float: left;
   color: #31c6e8;
 }
-.eventCard span {
+#events .eventCard span {
   margin-top: 8px;
 }
-.eventCard p {
+#events .eventCard p {
   clear: both;
 }
-.eventCard a:hover {
+#events .eventCard a:hover {
   cursor: pointer;
+}
+#events .btn {
+  margin-bottom: 10px;
 }
 
 .ui-datepicker {

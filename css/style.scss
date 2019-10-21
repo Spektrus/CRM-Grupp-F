@@ -84,39 +84,118 @@ main {
     }
 }
 
-.eventCard { // upcoming events
-    font-size: $bodyText;
-    font-family: $fontBody;
-    width: $eventWidth;
-    border: 2px solid black;
-    border-radius: 2px;
-    margin-bottom: 15px;
-    padding: 5px;
-    background-color: colors.$darkerDark;
-    overflow: auto;
-    img {
-        width: $iconSize;
-        height: $iconSize;
-    }
-    img.phone {
-        margin-right: 10px;
-    }
-    span, .right {
-        float: right;
-    }
-    h3 {
+#calendar {
+    .month {
+        border: 2px solid colors.$borderColor;
+        padding: 70px 25px;
+        width: 100%;
+        background: colors.$darkerDark;
+        text-align: center;
+        #calendarYear {
+            color: colors.$subTitleColor;
+        }
+        #calendarMonth {
+            color: colors.$titleColor;
+        }
+      }
+      
+      .month ul {
+        margin: 0;
+        padding: 0;
+      }
+      
+      .month ul li {
+        font-size: 20px;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+      }
+      
+      .month .prev {
         float: left;
+        padding-top: 10px;
+      }
+      
+      .month .next {
+        float: right;
+        padding-top: 10px;
+      }
+      
+      .weekdays {
+        border-right: 2px solid colors.$borderColor;
+        border-left: 2px solid colors.$borderColor;
+        margin: 0;
+        padding: 10px 0;
+        background-color: colors.$lightDark;
+      }
+      
+      .weekdays li {
+        display: inline-block;
+        width: 13.6%;
         color: colors.$subTitleColor;
+        text-align: center;
+      }
+      
+      .days {
+        border: 2px solid colors.$borderColor;
+        padding: 10px 0;
+        background: colors.$darkerDark;
+        margin: 0;
+      }
+      
+      .days li {
+        display: inline-block;
+        width: 13.6%;
+        text-align: center;
+        margin-bottom: 5px;
+      }
+      
+      .days li .active {
+        padding: 5px;
+        color: colors.$titleColor;
+      }
+    li {
+        list-style: none;
     }
-    span {
-        margin-top: 8px;
+}
+
+#events {
+
+    .eventCard { // upcoming events
+        font-size: $bodyText;
+        font-family: $fontBody;
+        border: 2px solid colors.$borderColor;
+        border-radius: 2px;
+        margin-bottom: 15px;
+        padding: 5px;
+        background-color: colors.$darkerDark;
+        overflow: auto;
+        img {
+            width: $iconSize;
+            height: $iconSize;
+        }
+        img.phone {
+            margin-right: 10px;
+        }
+        span, .right {
+            float: right;
+        }
+        h3 {
+            float: left;
+            color: colors.$subTitleColor;
+        }
+        span {
+            margin-top: 8px;
+        }
+        p {
+            clear: both;
+        }
+        a:hover {
+            cursor: pointer;
+        }
     }
-    p {
-        clear: both;
-    }
-    a:hover {
-        cursor: pointer;
-    }
+    .btn {
+        margin-bottom: 10px;
+    }    
 }
 
 .ui-datepicker { // datepicker
