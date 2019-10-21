@@ -31,7 +31,7 @@ class Events {
         this.edit = '<a tabindex="0" data-toggle="popover" data-placement="right" class="right" data-html="true" data-content="' + this.editData + '"><img class="right more" src="../images/more.png"></a>';
     }
 
-    sortByDate() {
+    sortByDate() {  
         // TODO: Sort events by date
     }
 
@@ -61,7 +61,7 @@ class Calendar {
     constructor() {
         this.date = new Date();
     }
-    getDay() {
+    setDay() {
         $(".days li").each(function(index, element){
             let listValue = Number(element.innerText);
             if (listValue === calendar.date.getDate()) {
@@ -69,12 +69,18 @@ class Calendar {
             }
         });
     }
+    setMonth() {
+
+    }
+    setYear() {
+
+    }
 }
 
 
 calendar = new Calendar();
 events = new Events();
-calendar.getDay();
+calendar.setDay();
 
 
 $("#addEvent").click(function () {
