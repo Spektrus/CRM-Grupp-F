@@ -57,7 +57,25 @@ class Events {
     }
 }
 
+class Calendar {
+    constructor() {
+        this.date = new Date();
+    }
+    getDay() {
+        $(".days li").each(function(index, element){
+            let listValue = Number(element.innerText);
+            if (listValue === calendar.date.getDate()) {
+                $(element).addClass("active");
+            }
+        });
+    }
+}
+
+
+calendar = new Calendar();
 events = new Events();
+calendar.getDay();
+
 
 $("#addEvent").click(function () {
     events.addEvent();

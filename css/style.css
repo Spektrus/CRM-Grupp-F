@@ -130,7 +130,7 @@ main h2 {
   text-align: center;
   margin-bottom: 5px;
 }
-#calendar .days li .active {
+#calendar .days li.active {
   padding: 5px;
   color: #31e89f;
 }
