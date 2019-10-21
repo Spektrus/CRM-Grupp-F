@@ -60,27 +60,29 @@ class Events {
 class Calendar {
     constructor() {
         this.date = new Date();
+        this.day = this.date.getDate();
+        this.options = {month: "long"};
+        this.month = new Intl.DateTimeFormat("en-US", this.options).format(this.date);
+        this.year = this.date.getFullYear();
     }
-    setDay() {
+    setCurrentDate() {
+        this.month;
+        $("#calendarMonth").prepend(this.month);
+        $("#calendarYear").html(this.year);
         $(".days li").each(function(index, element){
             let listValue = Number(element.innerText);
-            if (listValue === calendar.date.getDate()) {
+            if (listValue === calendar.day) {
                 $(element).addClass("active");
             }
         });
     }
-    setMonth() {
 
-    }
-    setYear() {
-
-    }
 }
 
 
 calendar = new Calendar();
 events = new Events();
-calendar.setDay();
+calendar.setCurrentDate();
 
 
 $("#addEvent").click(function () {
