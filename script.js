@@ -64,7 +64,8 @@ $("#addEvent").click(function () {
 });
 
 $("#eventDate").datepicker({
-    dateFormat: "MM d"
+    dateFormat: "MM d",
+    firstDay: 1
 });
 
 CRM = new CRM();
