@@ -2,7 +2,7 @@
 
 @import url('https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed&display=swap');
 $eventWidth: 500px;
-$iconSize: 28px;
+$iconSize: 20px;
 $bodyText: 15px;
 $fontHeading: "Roboto Condensed", "Arial", sans-serif;
 $fontBody: "Roboto", "Arial", sans-serif;
@@ -41,14 +41,6 @@ a:hover {
         background-color: #ddd;
         color: black;
     }
-    .close {
-        color: colors.$subTitleColor;
-        opacity: 1;
-        text-shadow: none;
-    }
-    .close:hover {
-        color: colors.$titleColor;
-    }
 }
 
 main { 
@@ -59,6 +51,9 @@ main {
     }
     h2 {
         font-size: 28px;
+    }
+    #newEvent {
+        margin-bottom: 10px;
     }
 }
 
@@ -169,15 +164,26 @@ main {
         padding: 5px;
         background-color: colors.$darkerDark;
         overflow: auto;
+        clear: both;
         img {
             width: $iconSize;
             height: $iconSize;
         }
-        img.phone {
-            margin-right: 10px;
+        .phone {
+            margin-right: 5px;
         }
-        span, .right {
+        span, .edit {
             float: right;
+        }
+        .delete {
+            background: none;
+            border: none;
+            float: right;
+            margin-left: 5px;
+        }
+        .email {
+            width: 25px;
+            height: 25px;
         }
         h3 {
             float: left;
@@ -189,13 +195,22 @@ main {
         p {
             clear: both;
         }
-        a:hover {
+        img:hover {
             cursor: pointer;
         }
     }
     .btn {
         margin-bottom: 10px;
-    }    
+    }
+}
+
+.close { // close button
+    color: colors.$subTitleColor;
+    opacity: 1;
+    text-shadow: none;
+}
+.close:hover {
+    color: colors.$titleColor;
 }
 
 .ui-datepicker { // datepicker

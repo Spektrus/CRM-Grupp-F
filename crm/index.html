@@ -39,101 +39,94 @@
     </header>
     <main>
         <h1>Upcoming events</h1>
+        <button type="button" class="btn" id="newEvent" data-target="#addNewEvent" data-toggle="modal">Add new event</button>
         <div class="row">
             <div id="events" class="col-md-4">
                 <div class="eventCard">
                     <h3 class="eventTitle">Call Jessica</h3>
-                    <span>October 20, 19:00</span>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptates, facere? Eaque excepturi
-                        sunt ad
-                        pariatur tempore, ipsam atque, cupiditate nemo quibusdam dolorem corrupti laudantium at
-                        exercitationem.
-                        Illum nulla incidunt maxime?</p>
-                    <a tabindex="0" data-toggle="popover" data-placement="bottom" data-html="true"
-                        data-content="<a href='#'>Call with phone</a><br><a href='#'>Call with Skype</a>"><img
-                            class="phone" src="../images/phone.png"></a>
-                    <a href="mailto:jessica@alba.com"><img src="../images/mail.png"></a>
-                    <a tabindex="0" data-toggle="popover" data-placement="right" class="right" data-html="true"
-                        data-content="<a href='#'>Edit event</a><br><a href='#'>Delete event</a>"><img class="right"
-                            src="../images/more.png"></a>
-
-                </div>
-                <div class="eventCard">
-                    <h3 class="eventTitle">Call Jessica</h3>
-                    <span>October 25, 12:00</span>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptates, facere? Eaque excepturi
-                        sunt ad
-                        pariatur tempore, ipsam atque, cupiditate nemo quibusdam dolorem corrupti laudantium at
-                        exercitationem.
-                        Illum nulla incidunt maxime?</p>
+                    <span class="eventTime">12:00</span>
+                    <span class="eventDate">October 25&nbsp;</span>
+                    <p class="eventInfo">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptates, facere? Eaque excepturi sunt ad pariatur tempore, ipsam atque, cupiditate nemo quibusdam dolorem corrupti laudantium at exercitationem. Illum nulla incidunt maxime?</p>
                     <a tabindex="0" data-toggle="popover" data-placement="bottom" data-html="true"
                         data-content="<a href='#'>Call with phone</a><br><a href='#'>Call with Skype</a>"><img
                             class="phone" src="../images/phone.png"></a>
                     <a href="mailto:jessica@alba.com"><img class="email" src="../images/mail.png"></a>
-                    <a tabindex="0" data-toggle="popover" data-placement="right" class="right" data-html="true"
-                        data-content="<a href='#'>Edit event</a><br><a href='#'>Delete event</a>"><img
-                            class="right more" src="../images/more.png"></a>
+                    <img src="../images/delete.png" class="delete">
+                    <img src="../images/edit.png" class="edit" data-target="#editCurrEvent" data-toggle="modal">
+
                 </div>
-                <button type="button" class="btn" data-target="#addNewEvent" data-toggle="modal">Add new event</button>
+                <div class="eventCard">
+                    <h3 class="eventTitle">Call Jessica</h3>
+                    <span class="eventTime">12:00</span>
+                    <span class="eventDate">October 25&nbsp;</span>
+                    <p class="eventInfo">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptates, facere? Eaque excepturi sunt ad pariatur tempore, ipsam atque, cupiditate nemo quibusdam dolorem corrupti laudantium at exercitationem. Illum nulla incidunt maxime?</p>
+                    <a tabindex="0" data-toggle="popover" data-placement="bottom" data-html="true"
+                        data-content="<a href='#'>Call with phone</a><br><a href='#'>Call with Skype</a>"><img
+                            class="phone" src="../images/phone.png"></a>
+                    <a href="mailto:jessica@alba.com"><img class="email" src="../images/mail.png"></a>
+                    <img src="../images/delete.png" class="delete">
+                    <img src="../images/edit.png" class="edit" data-target="#editCurrEvent" data-toggle="modal">
+                </div>
             </div>
             <div id="calendar" class="col-md-8">
-                    <div class="month">      
-                            <ul>
-                              <li class="prev">&#10094;</li>
-                              <li class="next">&#10095;</li>
-                              <li id="calendarMonth">
-                                <br>
-                                <span id="calendarYear">2019</span>
-                              </li>
-                            </ul>
-                          </div>
-                          
-                          <ul class="weekdays">
-                            <li>Mo</li>
-                            <li>Tu</li>
-                            <li>We</li>
-                            <li>Th</li>
-                            <li>Fr</li>
-                            <li>Sa</li>
-                            <li>Su</li>
-                          </ul>
-                          
-                          <ul class="days">  
-                            <li>1</li>
-                            <li>2</li>
-                            <li>3</li>
-                            <li>4</li>
-                            <li>5</li>
-                            <li>6</li>
-                            <li>7</li>
-                            <li>8</li>
-                            <li>9</li>
-                            <li>10</li>
-                            <li>11</li>
-                            <li>12</li>
-                            <li>13</li>
-                            <li>14</li>
-                            <li>15</li>
-                            <li>16</li>
-                            <li>17</li>
-                            <li>18</li>
-                            <li>19</li>
-                            <li>20</li>
-                            <li>21</li>
-                            <li>22</li>
-                            <li>23</li>
-                            <li>24</li>
-                            <li>25</li>
-                            <li>26</li>
-                            <li>27</li>
-                            <li>28</li>
-                            <li>29</li>
-                            <li>30</li>
-                            <li>31</li>
-                          </ul>
+                <div class="month">
+                    <ul>
+                        <li class="prev">&#10094;</li>
+                        <li class="next">&#10095;</li>
+                        <li id="calendarMonth">
+                            <br>
+                            <span id="calendarYear">2019</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <ul class="weekdays">
+                    <li>Mo</li>
+                    <li>Tu</li>
+                    <li>We</li>
+                    <li>Th</li>
+                    <li>Fr</li>
+                    <li>Sa</li>
+                    <li>Su</li>
+                </ul>
+
+                <ul class="days">
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                    <li>4</li>
+                    <li>5</li>
+                    <li>6</li>
+                    <li>7</li>
+                    <li>8</li>
+                    <li>9</li>
+                    <li>10</li>
+                    <li>11</li>
+                    <li>12</li>
+                    <li>13</li>
+                    <li>14</li>
+                    <li>15</li>
+                    <li>16</li>
+                    <li>17</li>
+                    <li>18</li>
+                    <li>19</li>
+                    <li>20</li>
+                    <li>21</li>
+                    <li>22</li>
+                    <li>23</li>
+                    <li>24</li>
+                    <li>25</li>
+                    <li>26</li>
+                    <li>27</li>
+                    <li>28</li>
+                    <li>29</li>
+                    <li>30</li>
+                    <li>31</li>
+                </ul>
 
             </div>
-            <div class="modal fade" id="addNewEvent" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+
+            <div class="modal fade" id="addNewEvent" tabindex="-1" role="dialog" aria-labelledby="Add new event"
                 aria-hidden="true">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
@@ -144,17 +137,43 @@
                             </button>
                         </div>
                         <div class="modal-body" id="addEventModal">
-                            <input class="form-control" id="eventTitle" type="text" maxlength="25" placeholder="Title">
-                            <input class="form-control" id="eventPerson" type="text"
-                                placeholder="Placeholder choosing customers">
-                            <input class="form-control" id="eventDate" type="text" placeholder="Date">
-                            <input class="form-control" id="evenTime" type="time" placeholder="Date">
-                            <textarea class="form-control" id="eventTextArea" rows="5" cols="50"
-                                placeholder="Text..."></textarea>
+                            <input class="form-control addInput" id="addEventTitle" type="text" maxlength="25" placeholder="Title" required>
+                            <!--<input class="form-control" id="eventPerson" type="text"
+                                placeholder="Placeholder choosing customers">-->
+                            <input class="form-control addInput" id="addEventDate" type="text" placeholder="Date" required>
+                            <input class="form-control addInput" id="addEventTime" type="time" placeholder="time" required>
+                            <textarea class="form-control addInput" id="addEventTextArea" rows="5" cols="50"
+                                placeholder="Text..." required></textarea>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn" data-dismiss="modal">Cancel</button>
                             <button type="button" id="addEvent" class="btn">Add event</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade" id="editCurrEvent" tabindex="-1" role="dialog" aria-labelledby="Edit current event"
+                aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="editEventLabel">Add new event</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body" id="addEventModal">
+                            <input class="form-control editInput" id="editEventTitle" type="text" maxlength="25" placeholder="Title">
+                            <!--<input class="form-control" id="eventPerson" type="text"
+                                placeholder="Placeholder choosing customers">-->
+                            <input class="form-control editInput" id="editEventTime" type="time" placeholder="Date">
+                            <input class="form-control editInput" id="editEventDate" type="text" placeholder="Date">
+                            <textarea class="form-control editInput" id="editEventTextArea" rows="5" cols="50"
+                                placeholder="Text..."></textarea>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn" data-dismiss="modal">Cancel</button>
+                            <button type="button" id="editEvent" class="btn">Edit event</button>
                         </div>
                     </div>
                 </div>
