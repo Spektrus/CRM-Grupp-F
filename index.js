@@ -21,11 +21,12 @@
     for(i = 0; i < loginUser.length; i++){
 
         if(username == loginUser[i].username && password == loginUser[i].password){
-            window.location.href =  window.location+ "/crm/index.html";
+            window.location.href = "crm/index.html";
             console.log( username + " You are logged in!");
             return
             
         }
     } 
     alert("Wrong username or password");
+    //window.location.href =  window.location+ "/crm/index.html";
 }
