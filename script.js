@@ -169,3 +169,7 @@ $(function () {
     });
 
 });
+
+function logOut(){
+    window.location.href = "/CRM-Grupp-F/index.html";
+}
