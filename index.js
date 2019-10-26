@@ -28,5 +28,5 @@
         }
     } 
     alert("Wrong username or password");
-    //window.location.href =  window.location+ "/crm/index.html";
+    
 }
