@@ -1,9 +1,4 @@
-/*class CRM {
-    constructor() {
-        this.username = "admin";
-        this.password = "admin";
-    }
-
+class CRM {
     createCustomers(amount) {
         $.ajax({
             url: "https://randomuser.me/api?results=" + amount + "",
@@ -14,13 +9,8 @@
                 return customers;
             }
         });
-
     }
-    createUser(tfn, namn, dob, email) {
-        //
-    }
-
-}*/
+}
 
 class Events {
     constructor() {
@@ -114,20 +104,24 @@ class Calendar {
     createCalendar(month, year) {
         this.date.setMonth(month);
         this.date.setYear(year);
-        console.log(this.month, this.year);
-
-        let monthName = new Intl.DateTimeFormat("en-US", this.options).format(this.date);
-        let firstDay = (new Date(year, month)).getDay();
+        let monthName = new Intl.DateTimeFormat("en-US", this.options).format(this.date); // name of month
+        let firstDay = (new Date(year, month)).getDay(); // gets first day of month
+        if (firstDay == 6) { // changes javascript date function to return monday as first day of the week
+            firstDay = 0;
+        } else if (firstDay == 0) {
+            firstDay = 6;
+        } else {
+            firstDay -= 1;
+        }
         let currentDay = firstDay - firstDay - firstDay + 1;
+        let days = this.getMonthDays(this.month, this.year);
         for (currentDay; currentDay < 8 - firstDay; currentDay++) {
             let day = currentDay;
-            if (day <= 0) {
+            if (day <= 0) { // fills in empty table data when first day is anything but monday
                 day = "";
             }
             $(".week1").append("<td>" + day + "</td>");
         }
-
-        let days = this.getMonthDays(this.month, this.year);
         for (let week = 0; week < 7; week++) {
             $(".week2").append("<td>" + currentDay + "</td>");
             currentDay++;
@@ -148,8 +142,14 @@ class Calendar {
             $(".week5").append("<td>" + day + "</td>");
             currentDay++;
         }
-        for (currentDay; currentDay < days; currentDay++) {
+        for (currentDay; currentDay <= days; currentDay++) { // handles last week shenanigans when first day is sunday
             let day = currentDay;
+            if (firstDay == 6) {
+                days = 36;
+                if (currentDay > 31) {
+                    day = "";
+                }
+            }
             if (day > days) {
                 day = "";
             }
@@ -167,10 +167,10 @@ class Calendar {
             });
         }
     }
-    getMonthDays(month, year) {
+    getMonthDays(month, year) { // returns number of days in month
         return 32 - new Date(year, month, 32).getDate();
     }
-    nextMonth() {
+    nextMonth() { // next month in calendar
         if (this.month == 11) {
             this.month = 0;
             this.year += 1;
@@ -181,7 +181,7 @@ class Calendar {
         $("#calendarMonth").empty();
         this.createCalendar(this.month, this.year);
     }
-    prevMonth() {
+    prevMonth() { // previous month in calendar
         if (this.month == 0) {
             this.month = 11;
             this.year -= 1;
@@ -204,10 +204,10 @@ $(".month").on("click", "#nextMonth", function () {
     calendar.nextMonth();
 });
 
-
 $(".month").on("click", "#prevMonth", function () {
     calendar.prevMonth();
 });
+
 $("#addEvent").click(function () {
     events.addEvent();
 });

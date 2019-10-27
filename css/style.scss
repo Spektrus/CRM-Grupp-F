@@ -79,6 +79,7 @@ main {
 }
 
 #calendar {
+    text-align: center;
     .month {
         border: 2px solid colors.$borderColor;
         padding: 70px 25px;
@@ -102,6 +103,7 @@ main {
             text-transform: uppercase;
             letter-spacing: 3px;
             list-style-type: none;
+            color: colors.$subTitleColor;
         }
         #prevMonth {
             float: left;
@@ -113,7 +115,7 @@ main {
         }
         #prevMonth:hover, #nextMonth:hover {
             cursor: pointer;
-            color: colors.$subTitleColor;
+            color: colors.$titleColor;
         }
 
     }
@@ -130,9 +132,6 @@ main {
     .days {
         border: 2px solid colors.$borderColor;
         background: colors.$darkerDark;
-    }
-    
-    td {
     }
     
     .days td.active {
@@ -200,11 +199,31 @@ main {
     color: colors.$titleColor;
 }
 
-.ui-datepicker { // datepicker
+#ui-datepicker-div { // datepicker
     background-color: colors.$lightDark;
     padding: 5px;
     border: 2px solid colors.$borderColor;
-    display: none;
+    .ui-state-default {
+        text-align: center;
+        color: colors.$textColor;
+        background-color: colors.$darkerDark;
+        border-color: colors.$darkerDark;
+    }
+    .ui-state-active {
+        color: black;
+        background-color: colors.$subTitleColor;
+        border-color: colors.$subTitleColor;
+    }
+    .ui-state-highlight {
+        color: black;
+        background-color: colors.$titleColor;
+        border-color: colors.$titleColor;
+    }
+    .ui-datepicker-header {
+        color: colors.$textColor;
+        background-color: colors.$darkerDark;
+        border-color: colors.$darkerDark;
+    }
 }
 
 #addNewEvent {
@@ -253,7 +272,7 @@ th {
     background-color: rgba(49, 232, 159, 0.28);
 }
 
-tbody tr:hover {
+#customerTbody tr:hover {
     background-color: rgba(49, 232, 159, 0.28);
 }
 

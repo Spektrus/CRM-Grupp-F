@@ -70,6 +70,9 @@ main #newEvent {
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(49,232,159,1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
 }
 
+#calendar {
+  text-align: center;
+}
 #calendar .month {
   border: 2px solid #1B1D20;
   padding: 70px 25px;
@@ -93,6 +96,7 @@ main #newEvent {
   text-transform: uppercase;
   letter-spacing: 3px;
   list-style-type: none;
+  color: #31c6e8;
 }
 #calendar .month #prevMonth {
   float: left;
@@ -104,7 +108,7 @@ main #newEvent {
 }
 #calendar .month #prevMonth:hover, #calendar .month #nextMonth:hover {
   cursor: pointer;
-  color: #31c6e8;
+  color: #31e89f;
 }
 #calendar .weekdays {
   border-right: 2px solid #1B1D20;
@@ -180,11 +184,31 @@ main #newEvent {
   color: #31e89f;
 }
 
-.ui-datepicker {
+#ui-datepicker-div {
   background-color: #2B2D30;
   padding: 5px;
   border: 2px solid #1B1D20;
-  display: none;
+}
+#ui-datepicker-div .ui-state-default {
+  text-align: center;
+  color: #ccc;
+  background-color: #232529;
+  border-color: #232529;
+}
+#ui-datepicker-div .ui-state-active {
+  color: black;
+  background-color: #31c6e8;
+  border-color: #31c6e8;
+}
+#ui-datepicker-div .ui-state-highlight {
+  color: black;
+  background-color: #31e89f;
+  border-color: #31e89f;
+}
+#ui-datepicker-div .ui-datepicker-header {
+  color: #ccc;
+  background-color: #232529;
+  border-color: #232529;
 }
 
 #addNewEvent .form-control {
@@ -226,7 +250,7 @@ th {
   background-color: rgba(49, 232, 159, 0.28);
 }
 
-tbody tr:hover {
+#customerTbody tr:hover {
   background-color: rgba(49, 232, 159, 0.28);
 }
 

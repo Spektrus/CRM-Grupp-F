@@ -9,6 +9,7 @@
     <script src="../login.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="../css/style.css">
 </head>
 
@@ -22,24 +23,24 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
-                    <th class="nav-item active">
-                        <a class="nav-thnk" href="index.html">Home</span></a>
-                    </th>
-                    <th class="nav-item">
-                        <a class="nav-thnk" href="customers.html">Customers</a>
-                    </th>
-                    <th class="nav-item">
-                        <a class="nav-thnk" href="deals.html">Deals</a>
-                    </th>
-                    <th class="nav-item">
-                        <a class="nav-thnk" href="history.html">History</a>
-                    </th>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="index.html">Home</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="customers.html">Customers</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="deals.html">Deals</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="history.html">History</a>
+                    </li>
                 </ul>
 
                 <ul class="nav navbar-nav ml-auto">
-                    <th class="nav-item">
-                        <button type="button" oncthck="logOut()" class="btn">Sign out</button>
-                    </th>
+                    <li class="nav-item">
+                        <button type="button" onclick="logOut()" class="btn">Sign out</button>
+                    </li>
                 </ul>
             </div>
         </nav>
@@ -53,7 +54,7 @@
                     <h3 class="eventTitle">Call Jessica</h3>
                     <span class="eventTime">12:00</span>
                     <span class="eventDate">October 25&nbsp;</span>
-                    <p class="eventInfo">Lorem ipsum dolor, sit amet consectetur adipisicing etht. Voluptates, facere? Eaque excepturi sunt ad pariatur tempore, ipsam atque, cupiditate nemo quibusdam dolorem corrupti laudantium at exercitationem. Illum nulla incidunt maxime?</p>
+                    <p class="eventInfo">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptates, facere? Eaque excepturi sunt ad pariatur tempore, ipsam atque, cupiditate nemo quibusdam dolorem corrupti laudantium at exercitationem. Illum nulla incidunt maxime?</p>
                     <a tabindex="0" data-toggle="popover" data-placement="bottom" data-html="true"
                         data-content="<a href='#'>Call with phone</a><br><a href='#'>Call with Skype</a>"><img
                             class="phone" src="../images/phone.png"></a>
@@ -66,7 +67,7 @@
                     <h3 class="eventTitle">Call Jessica</h3>
                     <span class="eventTime">12:00</span>
                     <span class="eventDate">October 25&nbsp;</span>
-                    <p class="eventInfo">Lorem ipsum dolor, sit amet consectetur adipisicing etht. Voluptates, facere? Eaque excepturi sunt ad pariatur tempore, ipsam atque, cupiditate nemo quibusdam dolorem corrupti laudantium at exercitationem. Illum nulla incidunt maxime?</p>
+                    <p class="eventInfo">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptates, facere? Eaque excepturi sunt ad pariatur tempore, ipsam atque, cupiditate nemo quibusdam dolorem corrupti laudantium at exercitationem. Illum nulla incidunt maxime?</p>
                     <a tabindex="0" data-toggle="popover" data-placement="bottom" data-html="true"
                         data-content="<a href='#'>Call with phone</a><br><a href='#'>Call with Skype</a>"><img
                             class="phone" src="../images/phone.png"></a>
@@ -90,13 +91,13 @@
                 <table class="table table-borderless">
                     <thead>
                         <tr class="weekdays">
-                            <th>Su</th>
                             <th>Mo</th>
                             <th>Tu</th>
                             <th>We</th>
                             <th>Th</th>
                             <th>Fr</th>
                             <th>Sa</th>
+                            <th>Su</th>
                         </tr>
                     </thead>
                     <tbody class="days">
