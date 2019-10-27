@@ -57,12 +57,12 @@ class Events {
         }
     }
 
-    deleteEvent(element) {
+    deleteEvent(element) { // deletes event element
         if (confirm("Delete?")) {
             $(element).parent().remove();
         }
     }
-    getEventInfo(element) {
+    getEventInfo(element) { // takes text from event element and puts it into inputs in modal
         this.element = element.parent();
         let arr = [];
         $(element).parent().children().each(function () {
@@ -76,7 +76,7 @@ class Events {
             }
         });
     }
-    editEvent() {
+    editEvent() { // inserts new values from inputs back into edited event
         let modal = $(".editInput");
         let arr = [];
         modal.each(function (index, element) {
@@ -135,7 +135,6 @@ $("#addEvent").click(function () {
 });
 
 $("#editEvent").click(function () {
-    console.log("hej");
     events.editEvent();
 });
 
@@ -154,7 +153,6 @@ $(document).on("click", ".delete", function () {
 });
 
 $(document).on("click", ".edit", function () {
-    console.log("hej");
     events.getEventInfo($(this));
 });
 
