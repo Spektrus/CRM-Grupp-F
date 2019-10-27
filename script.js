@@ -97,6 +97,7 @@ class Calendar {
         this.options = {
             month: "long"
         };
+        this.currentYear = this.date.getFullYear();
         this.currentMonth = this.date.getMonth();
         this.month = this.date.getMonth();
         this.year = this.date.getFullYear();
@@ -158,7 +159,7 @@ class Calendar {
 
         $("#calendarMonth").prepend(monthName);
         $("#calendarYear").html(this.year);
-        if (this.month == this.currentMonth) {
+        if (this.month == this.currentMonth && this.year == this.currentYear) {
             $(".days tr td").each(function (index, element) {
                 let today = Number(element.innerText);
                 if (today === calendar.day) {
