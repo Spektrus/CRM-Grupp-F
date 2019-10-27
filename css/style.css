@@ -79,6 +79,7 @@ main #newEvent {
 }
 #calendar .month #calendarYear {
   color: #31c6e8;
+  font-size: 20px;
 }
 #calendar .month #calendarMonth {
   color: #31e89f;
@@ -87,50 +88,34 @@ main #newEvent {
   margin: 0;
   padding: 0;
 }
-#calendar .month ul li {
+#calendar .month li {
   font-size: 20px;
   text-transform: uppercase;
   letter-spacing: 3px;
+  list-style-type: none;
 }
-#calendar .month .prev {
+#calendar .month #prevMonth {
   float: left;
   padding-top: 10px;
 }
-#calendar .month .next {
+#calendar .month #nextMonth {
   float: right;
   padding-top: 10px;
 }
 #calendar .weekdays {
   border-right: 2px solid #1B1D20;
   border-left: 2px solid #1B1D20;
-  margin: 0;
-  padding: 10px 0;
   background-color: #2B2D30;
 }
-#calendar .weekdays li {
-  display: inline-block;
-  width: 13.6%;
+#calendar .weekdays th {
   color: #31c6e8;
-  text-align: center;
 }
 #calendar .days {
   border: 2px solid #1B1D20;
-  padding: 10px 0;
   background: #232529;
-  margin: 0;
 }
-#calendar .days li {
-  display: inline-block;
-  width: 13.6%;
-  text-align: center;
-  margin-bottom: 5px;
-}
-#calendar .days li.active {
-  padding: 5px;
+#calendar .days td.active {
   color: #31e89f;
-}
-#calendar li {
-  list-style: none;
 }
 
 #events .eventCard {

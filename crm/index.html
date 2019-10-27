@@ -22,24 +22,24 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="index.html">Home</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="customers.html">Customers</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="deals.html">Deals</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="history.html">History</a>
-                    </li>
+                    <th class="nav-item active">
+                        <a class="nav-thnk" href="index.html">Home</span></a>
+                    </th>
+                    <th class="nav-item">
+                        <a class="nav-thnk" href="customers.html">Customers</a>
+                    </th>
+                    <th class="nav-item">
+                        <a class="nav-thnk" href="deals.html">Deals</a>
+                    </th>
+                    <th class="nav-item">
+                        <a class="nav-thnk" href="history.html">History</a>
+                    </th>
                 </ul>
 
                 <ul class="nav navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <button type="button" onclick="logOut()" class="btn">Sign out</button>
-                    </li>
+                    <th class="nav-item">
+                        <button type="button" oncthck="logOut()" class="btn">Sign out</button>
+                    </th>
                 </ul>
             </div>
         </nav>
@@ -53,7 +53,7 @@
                     <h3 class="eventTitle">Call Jessica</h3>
                     <span class="eventTime">12:00</span>
                     <span class="eventDate">October 25&nbsp;</span>
-                    <p class="eventInfo">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptates, facere? Eaque excepturi sunt ad pariatur tempore, ipsam atque, cupiditate nemo quibusdam dolorem corrupti laudantium at exercitationem. Illum nulla incidunt maxime?</p>
+                    <p class="eventInfo">Lorem ipsum dolor, sit amet consectetur adipisicing etht. Voluptates, facere? Eaque excepturi sunt ad pariatur tempore, ipsam atque, cupiditate nemo quibusdam dolorem corrupti laudantium at exercitationem. Illum nulla incidunt maxime?</p>
                     <a tabindex="0" data-toggle="popover" data-placement="bottom" data-html="true"
                         data-content="<a href='#'>Call with phone</a><br><a href='#'>Call with Skype</a>"><img
                             class="phone" src="../images/phone.png"></a>
@@ -66,7 +66,7 @@
                     <h3 class="eventTitle">Call Jessica</h3>
                     <span class="eventTime">12:00</span>
                     <span class="eventDate">October 25&nbsp;</span>
-                    <p class="eventInfo">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptates, facere? Eaque excepturi sunt ad pariatur tempore, ipsam atque, cupiditate nemo quibusdam dolorem corrupti laudantium at exercitationem. Illum nulla incidunt maxime?</p>
+                    <p class="eventInfo">Lorem ipsum dolor, sit amet consectetur adipisicing etht. Voluptates, facere? Eaque excepturi sunt ad pariatur tempore, ipsam atque, cupiditate nemo quibusdam dolorem corrupti laudantium at exercitationem. Illum nulla incidunt maxime?</p>
                     <a tabindex="0" data-toggle="popover" data-placement="bottom" data-html="true"
                         data-content="<a href='#'>Call with phone</a><br><a href='#'>Call with Skype</a>"><img
                             class="phone" src="../images/phone.png"></a>
@@ -75,62 +75,44 @@
                     <img src="../images/edit.png" class="edit" data-target="#editCurrEvent" data-toggle="modal">
                 </div>
             </div>
+            
             <div id="calendar" class="col-md-8">
                 <div class="month">
                     <ul>
-                        <li class="prev">&#10094;</li>
-                        <li class="next">&#10095;</li>
+                        <li id="prevMonth">&#10094;</li>
+                        <li id="nextMonth">&#10095;</li>
                         <li id="calendarMonth">
                             <br>
-                            <span id="calendarYear">2019</span>
                         </li>
+                        <span id="calendarYear">2019</span>
                     </ul>
                 </div>
-
-                <ul class="weekdays">
-                    <li>Mo</li>
-                    <li>Tu</li>
-                    <li>We</li>
-                    <li>Th</li>
-                    <li>Fr</li>
-                    <li>Sa</li>
-                    <li>Su</li>
-                </ul>
-
-                <ul class="days">
-                    <li>1</li>
-                    <li>2</li>
-                    <li>3</li>
-                    <li>4</li>
-                    <li>5</li>
-                    <li>6</li>
-                    <li>7</li>
-                    <li>8</li>
-                    <li>9</li>
-                    <li>10</li>
-                    <li>11</li>
-                    <li>12</li>
-                    <li>13</li>
-                    <li>14</li>
-                    <li>15</li>
-                    <li>16</li>
-                    <li>17</li>
-                    <li>18</li>
-                    <li>19</li>
-                    <li>20</li>
-                    <li>21</li>
-                    <li>22</li>
-                    <li>23</li>
-                    <li>24</li>
-                    <li>25</li>
-                    <li>26</li>
-                    <li>27</li>
-                    <li>28</li>
-                    <li>29</li>
-                    <li>30</li>
-                    <li>31</li>
-                </ul>
-
+                <table class="table table-borderless">
+                    <thead>
+                        <tr class="weekdays">
+                            <th>Su</th>
+                            <th>Mo</th>
+                            <th>Tu</th>
+                            <th>We</th>
+                            <th>Th</th>
+                            <th>Fr</th>
+                            <th>Sa</th>
+                        </tr>
+                    </thead>
+                    <tbody class="days">
+                        <tr class="week1">
+                        </tr>
+                        <tr class="week2">
+                        </tr>
+                        <tr class="week3">
+                        </tr>
+                        <tr class="week4">
+                        </tr>
+                        <tr class="week5">
+                        </tr>
+                        <tr class="week6"></tr>
+                    </tbody>
+                </table>
             </div>
 
             <div class="modal fade" id="addNewEvent" tabindex="-1" role="dialog" aria-labelledby="Add new event"
@@ -187,13 +169,13 @@
             </div>
         </div>
     </main>
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
-        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
     </script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
     </script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
         integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>

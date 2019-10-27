@@ -1,4 +1,4 @@
-class CRM {
+/*class CRM {
     constructor() {
         this.username = "admin";
         this.password = "admin";
@@ -20,7 +20,7 @@ class CRM {
         //
     }
 
-}
+}*/
 
 class Events {
     constructor() {
@@ -107,29 +107,93 @@ class Calendar {
         this.options = {
             month: "long"
         };
-        this.month = new Intl.DateTimeFormat("en-US", this.options).format(this.date);
-        this.year = this.date.getFullYear();
+        this.month = this.date.getMonth();
+        this.year = this.date.getFullYear();      
     }
-    setCurrentDate() {
-        this.month;
-        $("#calendarMonth").prepend(this.month);
+    createCalendar(month, year) {
+        this.month = month;
+        this.date.setMonth(month);
+        this.year = year;
+        let monthName = new Intl.DateTimeFormat("en-US", this.options).format(this.date);
+        let firstDay = (new Date(year, month)).getDay();
+        let currentDay=firstDay-firstDay-firstDay+1;
+        for (currentDay; currentDay<8-firstDay; currentDay++) {
+            let day = currentDay;
+            if (day <= 0) {
+                day = "";
+            }
+            $(".week1").append("<td>" + day + "</td>");
+        }
+
+        let days = this.getMonthDays(month, year);
+        for (let week=0; week<7; week++) {
+            $(".week2").append("<td>" + currentDay + "</td>");
+            currentDay++;
+        }
+        for (let week=0; week<7; week++) {
+            $(".week3").append("<td>" + currentDay + "</td>");
+            currentDay++;
+        }
+        for (let week=0; week<7; week++) {
+            $(".week4").append("<td>" + currentDay + "</td>");
+            currentDay++;
+        }
+        for (let week=0; week<7; week++) {
+            let day = currentDay;
+            if (day > days) {
+                day = "";
+            }
+            $(".week5").append("<td>" + day + "</td>");
+            currentDay++;
+        }
+        for (currentDay; currentDay<days; currentDay++) {
+            let day = currentDay;
+            if (day > days) {
+                day = "";
+            }
+            $(".week6").append("<td>" + day + "</td>");
+        }
+
+        $("#calendarMonth").prepend(monthName);
         $("#calendarYear").html(this.year);
-        $(".days li").each(function (index, element) {
-            let listValue = Number(element.innerText);
-            if (listValue === calendar.day) {
+        $(".days tr td").each(function (index, element) {
+            let today = Number(element.innerText);
+            if (today === calendar.day) {
                 $(element).addClass("active");
             }
         });
     }
-
+    getMonthDays(month, year) {
+        return 32 - new Date(year, month, 32).getDate();
+    }
+    nextMonth() {
+        this.month += 1;
+        $(".days tr td").remove();
+        $("#calendarMonth").empty();
+        this.createCalendar(this.month, this.year);
+    }
+    prevMonth() {
+        this.month -= 1;
+        $(".days tr td").remove();
+        $("#calendarMonth").empty();
+        this.createCalendar(this.month, this.year);
+    }
 }
 
 
 calendar = new Calendar();
 events = new Events();
-calendar.setCurrentDate();
+
+calendar.createCalendar(calendar.month, calendar.year);
+
+$(".month").on("click", "#nextMonth", function() {
+    calendar.nextMonth();
+});
 
 
+$(".month").on("click", "#prevMonth", function() {
+    calendar.prevMonth();
+});
 $("#addEvent").click(function () {
     events.addEvent();
 });
@@ -155,11 +219,6 @@ $(document).on("click", ".delete", function () {
 $(document).on("click", ".edit", function () {
     events.getEventInfo($(this));
 });
-
-
-
-CRM = new CRM();
-CRM.createCustomers(10);
 
 $(function () {
     $('[data-toggle="popover"]').popover({
