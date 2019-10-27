@@ -111,6 +111,10 @@ main {
             float: right;
             padding-top: 10px;
         }
+        #prevMonth:hover, #nextMonth:hover {
+            cursor: pointer;
+            color: colors.$subTitleColor;
+        }
 
     }
     .weekdays {

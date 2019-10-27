@@ -112,9 +112,10 @@ class Calendar {
         this.year = this.date.getFullYear();
     }
     createCalendar(month, year) {
-        this.month = month;
         this.date.setMonth(month);
-        this.year = year;
+        this.date.setYear(year);
+        console.log(this.month, this.year);
+
         let monthName = new Intl.DateTimeFormat("en-US", this.options).format(this.date);
         let firstDay = (new Date(year, month)).getDay();
         let currentDay = firstDay - firstDay - firstDay + 1;
@@ -126,7 +127,7 @@ class Calendar {
             $(".week1").append("<td>" + day + "</td>");
         }
 
-        let days = this.getMonthDays(month, year);
+        let days = this.getMonthDays(this.month, this.year);
         for (let week = 0; week < 7; week++) {
             $(".week2").append("<td>" + currentDay + "</td>");
             currentDay++;
@@ -170,13 +171,23 @@ class Calendar {
         return 32 - new Date(year, month, 32).getDate();
     }
     nextMonth() {
-        this.month += 1;
+        if (this.month == 11) {
+            this.month = 0;
+            this.year += 1;
+        } else {
+            this.month += 1;
+        }
         $(".days tr td").remove();
         $("#calendarMonth").empty();
         this.createCalendar(this.month, this.year);
     }
     prevMonth() {
-        this.month -= 1;
+        if (this.month == 0) {
+            this.month = 11;
+            this.year -= 1;
+        } else {
+            this.month -= 1;
+        }
         $(".days tr td").remove();
         $("#calendarMonth").empty();
         this.createCalendar(this.month, this.year);
