@@ -107,8 +107,9 @@ class Calendar {
         this.options = {
             month: "long"
         };
+        this.currentMonth = this.date.getMonth();
         this.month = this.date.getMonth();
-        this.year = this.date.getFullYear();      
+        this.year = this.date.getFullYear();
     }
     createCalendar(month, year) {
         this.month = month;
@@ -116,8 +117,8 @@ class Calendar {
         this.year = year;
         let monthName = new Intl.DateTimeFormat("en-US", this.options).format(this.date);
         let firstDay = (new Date(year, month)).getDay();
-        let currentDay=firstDay-firstDay-firstDay+1;
-        for (currentDay; currentDay<8-firstDay; currentDay++) {
+        let currentDay = firstDay - firstDay - firstDay + 1;
+        for (currentDay; currentDay < 8 - firstDay; currentDay++) {
             let day = currentDay;
             if (day <= 0) {
                 day = "";
@@ -126,19 +127,19 @@ class Calendar {
         }
 
         let days = this.getMonthDays(month, year);
-        for (let week=0; week<7; week++) {
+        for (let week = 0; week < 7; week++) {
             $(".week2").append("<td>" + currentDay + "</td>");
             currentDay++;
         }
-        for (let week=0; week<7; week++) {
+        for (let week = 0; week < 7; week++) {
             $(".week3").append("<td>" + currentDay + "</td>");
             currentDay++;
         }
-        for (let week=0; week<7; week++) {
+        for (let week = 0; week < 7; week++) {
             $(".week4").append("<td>" + currentDay + "</td>");
             currentDay++;
         }
-        for (let week=0; week<7; week++) {
+        for (let week = 0; week < 7; week++) {
             let day = currentDay;
             if (day > days) {
                 day = "";
@@ -146,7 +147,7 @@ class Calendar {
             $(".week5").append("<td>" + day + "</td>");
             currentDay++;
         }
-        for (currentDay; currentDay<days; currentDay++) {
+        for (currentDay; currentDay < days; currentDay++) {
             let day = currentDay;
             if (day > days) {
                 day = "";
@@ -156,12 +157,14 @@ class Calendar {
 
         $("#calendarMonth").prepend(monthName);
         $("#calendarYear").html(this.year);
-        $(".days tr td").each(function (index, element) {
-            let today = Number(element.innerText);
-            if (today === calendar.day) {
-                $(element).addClass("active");
-            }
-        });
+        if (this.month == this.currentMonth) {
+            $(".days tr td").each(function (index, element) {
+                let today = Number(element.innerText);
+                if (today === calendar.day) {
+                    $(element).addClass("active");
+                }
+            });
+        }
     }
     getMonthDays(month, year) {
         return 32 - new Date(year, month, 32).getDate();
@@ -186,12 +189,12 @@ events = new Events();
 
 calendar.createCalendar(calendar.month, calendar.year);
 
-$(".month").on("click", "#nextMonth", function() {
+$(".month").on("click", "#nextMonth", function () {
     calendar.nextMonth();
 });
 
 
-$(".month").on("click", "#prevMonth", function() {
+$(".month").on("click", "#prevMonth", function () {
     calendar.prevMonth();
 });
 $("#addEvent").click(function () {
@@ -227,7 +230,7 @@ $(function () {
 
 });
 
-function logOut(){
+function logOut() {
     document.cookie = "login=false; expires=Thu, 01 Jan 1970 00:00:01 UTC; path=/;"
     if (document.cookie !== "login=true") {
         window.location.href = "../";
