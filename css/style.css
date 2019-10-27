@@ -225,9 +225,6 @@ main #newEvent {
   border: 2px solid #1B1D20;
   color: black;
 }
-.btn :hover {
-  background-color: #31e89f;
-}
 
 .btn:hover {
   background-color: #31e89f;

@@ -92,7 +92,6 @@ main {
         }
         #calendarMonth {
             color: colors.$titleColor;
-
         }
         ul {
             margin: 0;
@@ -235,8 +234,6 @@ main {
     textarea {
         height: auto;
     }
-    
-
 }
 
 // buttons
@@ -245,9 +242,6 @@ main {
     background-color: colors.$subTitleColor;
     border: 2px solid colors.$borderColor;
     color: black;
-    :hover {
-        background-color: colors.$titleColor;
-    }
 }
 .btn:hover {
     background-color: colors.$titleColor;
