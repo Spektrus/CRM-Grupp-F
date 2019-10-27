@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <script src="../login.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/style.css">
@@ -34,13 +35,21 @@
                         <a class="nav-link" href="history.html">History</a>
                     </li>
                 </ul>
+
+                <ul class="nav navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <button type="button" onclick="logOut()" class="btn">Sign out</button>
+                    </li>
+                </ul>
             </div>
         </nav>
     </header>
 
     <main>
-        <h1>History</h1>
-        <div class="container_history">
+        <div class="row">
+        
+        <div class="col md-12">
+                <h1>History</h1>
             <ul class="nav justify-content-end">
                 <li class="nav-item">
                 </li>
@@ -113,7 +122,7 @@
             </table>
            
         </div>
-        
+    </div>
     </main>
 
     

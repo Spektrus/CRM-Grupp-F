@@ -18,15 +18,15 @@
             <img id="loginLogo" src="images/logo.png">
             <form>
                 <div class="form-group">
-                    <label for="exampleInputEmail1">Username</label>
-                    <input type="text" class="form-control logininput" id="exampleInputEmail1"
+                    <label  for="exampleInputEmail1">Username</label>
+                    <input type="text" id="loginuser" class="form-control logininput" id="exampleInputEmail1"
                         aria-describedby="emailHelp">
                 </div>
                 <div class="form-group">
-                    <label for="exampleInputPassword1">Password</label>
-                    <input type="password" class="form-control logininput" id="exampleInputPassword1">
+                    <label  for="exampleInputPassword1">Password</label>
+                    <input type="password" id="loginpw" class="form-control logininput" id="exampleInputPassword1">
                 </div>
-                <a href="crm/" class="btn">Sign In</a>
+                <button type="button" onclick="logIn()" id="login_btn" class="btn">Sign In</button>
             </form>
         </div>
     </div>
@@ -39,7 +39,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
     </script>
-    <script src="../script.js"></script>
+    <script src="index.js"></script>
 </body>
 
 </html>
