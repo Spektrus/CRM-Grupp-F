@@ -23,7 +23,7 @@ addButton.on("click", function() {
     
     addCustomerToTableArray(customerName, phone, email, additional);
 
-    printCustomerToTable(customerName, phone, email);
+    printCustomerToTable();
 
     console.log(customerTableArray);
     addButton.attr("data-dismiss", "modal");
@@ -48,21 +48,12 @@ function addCustomerToTableArray(fullname, phone, email, additional){
 }
 
 function printCustomerToTable(name, phone, email) {
-    $("#customerTbody").append("<tr id='cID" + (customerTableArray.length) + "'>" + "<th scope='row'>" + (customerTableArray.length) + "</th>" + "<td class='cName'>" + name +"</td>" + "<td class='cPhone'>" + phone +"</td>" + "<td class='cMail'>" + email +"</td>" + "</tr>");
+    // $("#customerTbody").append("<tr id='cID" + (customerTableArray.length) + "'>" + "<th scope='row'>" + (customerTableArray.length) + "</th>" + "<td class='cName'>" + name +"</td>" + "<td class='cPhone'>" + phone +"</td>" + "<td class='cMail'>" + email +"</td>" + "</tr>");
+    $("#customerTbody").empty();
+    for (let i = 0; i < customerTableArray.length; i++) {
+        $("#customerTbody").append("<tr id='cID" + i + "'>" + "<th scope='row'>" + i + "</th>" + "<td class='cName'>" + customerTableArray[i].name +"</td>" + "<td class='cPhone'>" + customerTableArray[i].phoneNr +"</td>" + "<td class='cMail'>" + customerTableArray[i].mail +"</td>" + "</tr>");
+    }
     
-    // let trow = document.createElement("tr");
-    // let tRowNumber = document.createElement("th");
-    // let n = document.createElement("td");
-    // n.classList.add("fullname");
-    // let p = document.createElement("td");
-    // let e = document.createElement("td");
-    // let more = document.createElement("td")
-    // tRowNumber = customerTableArray.length;
-    // n.innerText = first + " " + last
-    // p.innerText = phone;
-    // e.innerText = email;
-    // trow.append(tRowNumber, n, p, e);
-    // tbodySelect.append(trow)
 }
 
 
@@ -83,12 +74,15 @@ $("#customerTbody").on("click", "tr", function() {
     // Remove selected contact
     $("#removeContactButton").on("click", function() {
         for(var i = 0; i < customerTableArray.length; i++) {
-            if(customerTableArray[i].information == info.information) {
+            if(customerTableArray[i].name == info[0].name) {
+                console.log(customerTableArray[i].name);
+                console.log(info[0].name);
                 customerTableArray.splice(i, 1);
                 break;
             }
         }
        info = "";
+        printCustomerToTable();
         console.log(customerTableArray);
         $(this).attr("data-dismiss", "modal");
         $("tr[data-picked='true']").remove();
@@ -96,20 +90,20 @@ $("#customerTbody").on("click", "tr", function() {
     });
     $("#editContactButton").on("click", function() {
         for(var i = 0; i < customerTableArray.length; i++) {
-            if(customerTableArray[i].name == info.name) {
+            if(customerTableArray[i].name == info[0].name) {
                 let tmp = {
                     name: $("#customerNameVal").val(),
                     phoneNr: $("#customerPhoneVal").val(),
                     mail: $("#customerEmailVal").val(),
                     information: $("#customerAdditionalVal").val()
                 };
-                customerTableArray.splice(i, 1);
-                customerTableArray.push(tmp);
+                customerTableArray.splice(i, 1, tmp);
                 break;
             }
         }
         info = "";
         console.log(customerTableArray);
+        printCustomerToTable();
         $(this).attr("data-dismiss", "modal");
         $("tr[data-picked='true']").attr("data-picked", "false")
     });
