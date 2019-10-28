@@ -28,6 +28,7 @@ function logIn() {
             return;
         }
     }
-    alert("Wrong username or password");
+    $(".hidden").removeClass("hidden")
+    //alert("Wrong username or password");
 
 }
