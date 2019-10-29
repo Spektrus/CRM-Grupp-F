@@ -14,30 +14,73 @@ class CRM {
 
 class Events {
     constructor() {
+        this.index;
         this.callData = '<a href=`#`>Call with phone</a><br><a href=`#`>Call with Skype</a>';
         this.call = '<a tabindex="0" data-toggle="popover" data-placement="bottom" data-html="true" data-content="' + this.callData + '"><img class="phone" src="../images/phone.png"></a>';
         this.email = '<a href="mailto:jessica@alba.com"><img class="email" src="../images/mail.png"></a>';
         this.delete = '<img src="../images/delete.png" class="delete">'
         this.edit = '<img src="../images/edit.png" class="edit" data-target="#editCurrEvent" data-toggle="modal"></img>'
-        this.element = "";
+        this.element;
+        this.eventList = [{
+            title: "Call Jessica",
+            date: "",
+            body: "Löksås ipsum erfarenheter nya hwila inom tre tid på flera trevnadens att av enligt, söka i är bland färdväg sjö se faktor är träutensilierna ta. Plats olika söka rännil har när det enligt regn, strand jäst gör blev strand oss sista flera tiden, inom söka stora som björnbär hwila oss och, som både dock träutensilierna regn i har."
+        }, {
+            title: "Call Ashur",
+            date: "",
+            body: "Löksås ipsum erfarenheter nya hwila inom tre tid på flera trevnadens att av enligt, söka i är bland färdväg sjö se faktor är träutensilierna ta. Plats olika söka rännil har när det enligt regn, strand jäst gör blev strand oss sista flera tiden, inom söka stora som björnbär hwila oss och, som både dock träutensilierna regn i har."
+
+        }];
+        this.eventList[0].date = new Date("2019 10 30 15:00");
+        this.eventList[1].date = new Date("2019 10 31 17:00");
     }
 
     sortByDate() {
-        // TODO: Sort events by date
+        this.eventList.sort(function (a, b) {
+            return new Date(a.date) - new Date(b.date);
+        });
+    }
+
+    displayEvents() {
+        this.sortByDate();
+        console.log(this.eventList);
+        $("#events").empty();
+        for (let i = 0; i < this.eventList.length; i++) {
+            let monthName = new Intl.DateTimeFormat("en-US", calendar.options).format(this.eventList[i].date);
+            let eventCard = "<div class='eventCard'><h3 class='eventTitle'>" + this.eventList[i].title + "</h3><span class='eventTime'>" + this.eventList[i].date.toLocaleTimeString("sv-SE", {
+                timeStyle: "short"
+            }) + "</span><span class='eventDate'>" + monthName + " " + this.eventList[i].date.getDate() + "&nbsp;</span>" + "<p>" + this.eventList[i].body + "</p>" + this.call + this.email + this.delete + this.edit + "</div>";
+            $("#events").append(eventCard);
+        }
+        $('[data-toggle="popover"]').popover({
+            trigger: 'focus'
+        });
     }
 
     addEvent() {
         let modal = $(".addInput");
         let arr = [];
+        let obj = {
+            title: "",
+            date: "",
+            body: ""
+        };
         modal.each(function (index, element) { // takes input values and puts them into array
             if (element.value != "") {
                 arr.push(element.value);
             }
         });
         if (arr.length === 4) { // checks if all fields are entered
-            let eventCard = "<div class='eventCard'><h3 class='eventTitle'>" + arr[0] + "</h3><span class='eventTime'>" + arr[2] + "</span><span class='eventDate'>" + arr[1] + "&nbsp;</span>" + "<p>" + arr[3] + "</p>" + this.call + this.email + this.delete + this.edit + "</div>";
-            console.log(arr[1] + arr[2]);
-            $("#events").append(eventCard);
+            let [time1, time2] = arr[2].split(":");
+            let date = new Date($("#addEventDate").datepicker('getDate'));
+            date.setHours(time1, time2);
+            obj.title = arr[0];
+            obj.date = new Date(date);
+            obj.body = arr[3];
+            this.eventList.push(obj);
+            console.log(obj);
+            console.log(this.eventList);
+            this.displayEvents();
             $('[data-toggle="popover"]').popover({
                 trigger: 'focus'
             });
@@ -48,23 +91,20 @@ class Events {
     }
 
     deleteEvent(element) { // deletes event element
+        this.index = element.parent().index();
         if (confirm("Delete?")) {
-            $(element).parent().remove();
+            this.eventList.splice(this.index, 1);
+            this.displayEvents();
         }
     }
     getEventInfo(element) { // takes text from event element and puts it into inputs in modal
-        this.element = element.parent();
-        let arr = [];
-        $(element).parent().children().each(function () {
-            arr.push($(this).text());
-        });
-        let modal = $(".editInput");
-        modal.each(function (index, element) {
-            if (index < 4) {
-                console.log(arr[index]);
-                element.value = arr[index];
-            }
-        });
+        this.index = element.parent().index();
+        $("#editEventTitle").val(this.eventList[this.index].title);
+        $("#editEventTime").val(this.eventList[this.index].date.toLocaleTimeString("sv-SE", {
+            timeStyle: "short"
+        }));
+        $("#editEventDate").datepicker("setDate", this.eventList[this.index].date);
+        $("#editEventTextArea").val(this.eventList[this.index].body);
     }
     editEvent() { // inserts new values from inputs back into edited event
         let modal = $(".editInput");
@@ -75,14 +115,14 @@ class Events {
             }
         });
         if (arr.length === 4) {
-            this.element.children().each(function (index, element) {
-                if (index < 4) {
-                    $(element).html(arr[index]);
-                    if ($(element).hasClass("eventDate")) {
-                        element.innerHTML += "&nbsp;";
-                    }
-                }
-            });
+            let [time1, time2] = arr[2].split(":");
+            let date = new Date($("#editEventDate").datepicker('getDate'));
+            date.setHours(time1, time2);
+            this.eventList[this.index].title = arr[0];
+            this.eventList[this.index].date = date;
+            this.eventList[this.index].body = arr[3];
+            console.log(this.eventList);
+            this.displayEvents();
             $("#editCurrEvent").modal("hide");
         } else {
             alert("Fill in all fields");
@@ -198,6 +238,7 @@ class Calendar {
 
 calendar = new Calendar();
 events = new Events();
+events.displayEvents();
 
 calendar.createCalendar(calendar.month, calendar.year);
 
@@ -217,12 +258,7 @@ $("#editEvent").click(function () {
     events.editEvent();
 });
 
-$("#editEventDate").datepicker({
-    dateFormat: "MM d",
-    firstDay: 1
-});
-
-$("#addEventDate").datepicker({
+$("#addEventDate, #editEventDate").datepicker({
     dateFormat: "MM d",
     firstDay: 1
 });
@@ -235,14 +271,7 @@ $(document).on("click", ".edit", function () {
     events.getEventInfo($(this));
 });
 
-$(function () {
-    $('[data-toggle="popover"]').popover({
-        trigger: 'focus'
-    });
-
-});
-
-function logOut() {
+function logOut() { // deletes cookie on logout
     document.cookie = "login=false; expires=Thu, 01 Jan 1970 00:00:01 UTC; path=/;"
     if (document.cookie !== "login=true") {
         window.location.href = "../";
