@@ -146,6 +146,9 @@ main {
     .calendarTitle {
         display: none;
     }
+    .tr:empty {
+        display: none;
+    }
 }
 
 #events {

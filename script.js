@@ -49,7 +49,7 @@ class Events {
             if (this.eventList[i].date.getMonth() === calendar.month && this.eventList[i].date.getFullYear() === calendar.year) {
                 $("#day" + this.eventList[i].date.getDate()).append("<span class='calendarEvent'>" + this.eventList[i].date.toLocaleTimeString("sv-SE", {
                     timeStyle: "short"
-                })+"<span class='calendarTitle'>" + this.eventList[i].title + "</span></span>");
+                }) + "<span class='calendarTitle'>" + this.eventList[i].title + "</span></span>");
             }
             let monthName = new Intl.DateTimeFormat("en-US", calendar.options).format(this.eventList[i].date);
             let eventCard = "<div class='eventCard'><h3 class='eventTitle'>" + this.eventList[i].title + "</h3><span class='eventTime'>" + this.eventList[i].date.toLocaleTimeString("sv-SE", {
@@ -148,11 +148,9 @@ class Calendar {
         this.date.setMonth(month, 1);
         this.date.setYear(year);
         let monthName = new Intl.DateTimeFormat("en-US", this.options).format(this.date); // name of month
-        console.log("Månad nr: " + (month+1) + "\nMånad namn: " + monthName);
+        console.log("Månad nr: " + (month + 1) + "\nMånad namn: " + monthName);
         let firstDay = (new Date(year, month)).getDay(); // gets first day of month
-        if (firstDay == 6) { // changes javascript date function to return monday as first day of the week
-            firstDay = 0;
-        } else if (firstDay == 0) {
+        if (firstDay === 0) { // changes javascript date function to return monday as first day of the week
             firstDay = 6;
         } else {
             firstDay -= 1;
@@ -164,18 +162,18 @@ class Calendar {
             if (day <= 0) { // fills in empty table data when first day is anything but monday
                 day = "";
             }
-            $(".week1").append("<td id='day"+currentDay+"'>" + day + "</td>");
+            $(".week1").append("<td id='day" + currentDay + "'>" + day + "</td>");
         }
         for (let week = 0; week < 7; week++) {
-            $(".week2").append("<td id='day"+currentDay+"'>" + currentDay + "</td>");
+            $(".week2").append("<td id='day" + currentDay + "'>" + currentDay + "</td>");
             currentDay++;
         }
         for (let week = 0; week < 7; week++) {
-            $(".week3").append("<td id='day"+currentDay+"'>" + currentDay + "</td>");
+            $(".week3").append("<td id='day" + currentDay + "'>" + currentDay + "</td>");
             currentDay++;
         }
         for (let week = 0; week < 7; week++) {
-            $(".week4").append("<td id='day"+currentDay+"'>" + currentDay + "</td>");
+            $(".week4").append("<td id='day" + currentDay + "'>" + currentDay + "</td>");
             currentDay++;
         }
         for (let week = 0; week < 7; week++) {
@@ -183,25 +181,33 @@ class Calendar {
             if (day > days) {
                 day = "";
             }
-            $(".week5").append("<td id='day"+currentDay+"'>" + day + "</td>");
+            $(".week5").append("<td id='day" + currentDay + "'>" + day + "</td>");
             currentDay++;
-        }
-        if (currentDay < 32) {  // border bottom not showing fix
-            $(".days").append("<tr class='week6'></tr>");
-        } else if ($(".week6").length) {
-            $(".week6").remove();
         }
         for (currentDay; currentDay <= days; currentDay++) { // handles last week shenanigans when first day is sunday
             let day = currentDay;
-            if (firstDay == 6) {
+            if (firstDay === 6) {
                 days = 36;
-                if (currentDay > 31) {
-                    day = "";
-                }
+            } else if (firstDay === 5) {
+                days = 37;
             }
-            $(".week6").append("<td id='day"+currentDay+"'>" + day + "</td>");
+            if (currentDay > 31) {
+                day = "";
+            }
+            $(".week6").append("<td id='day" + currentDay + "'>" + day + "</td>");
         }
-
+        let week6 = $(".week6");
+        let week5 = $(".week5");
+        if (week6.children().length === 0) { // border fix
+            week6.hide();
+        } else {
+            week6.show();
+        }
+        if (firstDay === 0 && days === 28) { // february fix
+            week5.hide();
+        } else {
+            week5.show();
+        }
         $("#calendarMonth").prepend(monthName);
         $("#calendarYear").html(this.year);
         if (this.month == this.currentMonth && this.year == this.currentYear) {
