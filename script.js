@@ -142,7 +142,7 @@ class Calendar {
         this.currentMonth = this.date.getMonth();
         this.month = this.date.getMonth();
         this.year = this.date.getFullYear();
-        this.monthName = ["January", "Feburary", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+        this.monthName = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
     }
     createCalendar(month, year) {
         this.date.setMonth(month);
