@@ -45,7 +45,13 @@ class Events {
         this.sortByDate();
         console.log(this.eventList);
         $("#events").empty();
+        $(".calendarEvent").remove();
         for (let i = 0; i < this.eventList.length; i++) {
+            if (this.eventList[i].date.getMonth() === calendar.month) {
+                $("#day" + this.eventList[i].date.getDate()).append("<span class='calendarEvent'>" + this.eventList[i].date.toLocaleTimeString("sv-SE", {
+                    timeStyle: "short"
+                })+"<span class='calendarTitle'>" + this.eventList[i].title + "</span></span>");
+            }
             let monthName = new Intl.DateTimeFormat("en-US", calendar.options).format(this.eventList[i].date);
             let eventCard = "<div class='eventCard'><h3 class='eventTitle'>" + this.eventList[i].title + "</h3><span class='eventTime'>" + this.eventList[i].date.toLocaleTimeString("sv-SE", {
                 timeStyle: "short"
@@ -161,18 +167,18 @@ class Calendar {
             if (day <= 0) { // fills in empty table data when first day is anything but monday
                 day = "";
             }
-            $(".week1").append("<td>" + day + "</td>");
+            $(".week1").append("<td id='day"+currentDay+"'>" + day + "</td>");
         }
         for (let week = 0; week < 7; week++) {
-            $(".week2").append("<td>" + currentDay + "</td>");
+            $(".week2").append("<td id='day"+currentDay+"'>" + currentDay + "</td>");
             currentDay++;
         }
         for (let week = 0; week < 7; week++) {
-            $(".week3").append("<td>" + currentDay + "</td>");
+            $(".week3").append("<td id='day"+currentDay+"'>" + currentDay + "</td>");
             currentDay++;
         }
         for (let week = 0; week < 7; week++) {
-            $(".week4").append("<td>" + currentDay + "</td>");
+            $(".week4").append("<td id='day"+currentDay+"'>" + currentDay + "</td>");
             currentDay++;
         }
         for (let week = 0; week < 7; week++) {
@@ -180,7 +186,7 @@ class Calendar {
             if (day > days) {
                 day = "";
             }
-            $(".week5").append("<td>" + day + "</td>");
+            $(".week5").append("<td id='day"+currentDay+"'>" + day + "</td>");
             currentDay++;
         }
         for (currentDay; currentDay <= days; currentDay++) { // handles last week shenanigans when first day is sunday
@@ -194,7 +200,7 @@ class Calendar {
             if (day > days) {
                 day = "";
             }
-            $(".week6").append("<td>" + day + "</td>");
+            $(".week6").append("<td id='day"+currentDay+"'>" + day + "</td>");
         }
 
         $("#calendarMonth").prepend(monthName);
@@ -207,6 +213,7 @@ class Calendar {
                 }
             });
         }
+        events.displayEvents();
     }
     getMonthDays(month, year) { // returns number of days in month
         return 32 - new Date(year, month, 32).getDate();
@@ -238,8 +245,6 @@ class Calendar {
 
 calendar = new Calendar();
 events = new Events();
-events.displayEvents();
-
 calendar.createCalendar(calendar.month, calendar.year);
 
 $(".month").on("click", "#nextMonth", function () {

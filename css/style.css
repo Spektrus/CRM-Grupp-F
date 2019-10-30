@@ -110,6 +110,9 @@ main #newEvent {
   cursor: pointer;
   color: #31e89f;
 }
+#calendar table {
+  border-bottom: 2px solid #1B1D20;
+}
 #calendar .weekdays {
   border-right: 2px solid #1B1D20;
   border-left: 2px solid #1B1D20;
@@ -124,6 +127,17 @@ main #newEvent {
 }
 #calendar .days td.active {
   color: #31e89f;
+}
+#calendar .calendarEvent {
+  max-width: 100%;
+  display: block;
+  color: #ccc;
+  background-color: #2B2D30;
+  border-radius: 4px;
+  border: 2px solid #1B1D20;
+}
+#calendar .calendarTitle {
+  display: none;
 }
 
 #events .eventCard {
@@ -274,8 +288,25 @@ th {
   margin-right: 5%;
 }
 
-.hidden{
-  display: none;
+@media screen and (min-width: 768px) {
+  .calendarEvent {
+    margin: auto;
+    width: 50%;
+  }
+}
+@media screen and (max-width: 768px) {
+  .table td, table th {
+    padding: 0.5rem !important;
+  }
+
+  .calendarEvent {
+    font-size: 75%;
+  }
+}
+@media screen and (max-width: 350px) {
+  .table td, table th {
+    padding: 0.25rem !important;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
