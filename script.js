@@ -43,7 +43,6 @@ class Events {
 
     displayEvents() {
         this.sortByDate();
-        console.log(this.eventList);
         $("#events").empty();
         $(".calendarEvent").remove();
         for (let i = 0; i < this.eventList.length; i++) {
@@ -52,10 +51,9 @@ class Events {
                     timeStyle: "short"
                 })+"<span class='calendarTitle'>" + this.eventList[i].title + "</span></span>");
             }
-            let monthName = new Intl.DateTimeFormat("en-US", calendar.options).format(this.eventList[i].date);
             let eventCard = "<div class='eventCard'><h3 class='eventTitle'>" + this.eventList[i].title + "</h3><span class='eventTime'>" + this.eventList[i].date.toLocaleTimeString("sv-SE", {
                 timeStyle: "short"
-            }) + "</span><span class='eventDate'>" + monthName + " " + this.eventList[i].date.getDate() + "&nbsp;</span>" + "<p>" + this.eventList[i].body + "</p>" + this.call + this.email + this.delete + this.edit + "</div>";
+            }) + "</span><span class='eventDate'>" + calendar.monthName[this.eventList[i].date.getMonth()] + " " + this.eventList[i].date.getDate() + "&nbsp;</span>" + "<p>" + this.eventList[i].body + "</p>" + this.call + this.email + this.delete + this.edit + "</div>";
             $("#events").append(eventCard);
         }
         $('[data-toggle="popover"]').popover({
@@ -84,8 +82,6 @@ class Events {
             obj.date = new Date(date);
             obj.body = arr[3];
             this.eventList.push(obj);
-            console.log(obj);
-            console.log(this.eventList);
             this.displayEvents();
             $('[data-toggle="popover"]').popover({
                 trigger: 'focus'
@@ -127,7 +123,6 @@ class Events {
             this.eventList[this.index].title = arr[0];
             this.eventList[this.index].date = date;
             this.eventList[this.index].body = arr[3];
-            console.log(this.eventList);
             this.displayEvents();
             $("#editCurrEvent").modal("hide");
         } else {
@@ -147,11 +142,12 @@ class Calendar {
         this.currentMonth = this.date.getMonth();
         this.month = this.date.getMonth();
         this.year = this.date.getFullYear();
+        this.monthName = ["January", "Feburary", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
     }
     createCalendar(month, year) {
         this.date.setMonth(month);
         this.date.setYear(year);
-        let monthName = new Intl.DateTimeFormat("en-US", this.options).format(this.date); // name of month
+        console.log("Månad nr: " + (month+1) + "\nMånad namn: " + this.monthName[month]);
         let firstDay = (new Date(year, month)).getDay(); // gets first day of month
         if (firstDay == 6) { // changes javascript date function to return monday as first day of the week
             firstDay = 0;
@@ -191,7 +187,7 @@ class Calendar {
         }
         if (currentDay < 32) {  // border bottom not showing fix
             $(".days").append("<tr class='week6'></tr>");
-        } else {
+        } else if ($(".week6").length) {
             $(".week6").remove();
         }
         for (currentDay; currentDay <= days; currentDay++) { // handles last week shenanigans when first day is sunday
@@ -205,7 +201,7 @@ class Calendar {
             $(".week6").append("<td id='day"+currentDay+"'>" + day + "</td>");
         }
 
-        $("#calendarMonth").prepend(monthName);
+        $("#calendarMonth").prepend(this.monthName[month]);
         $("#calendarYear").html(this.year);
         if (this.month == this.currentMonth && this.year == this.currentYear) {
             $(".days tr td").each(function (index, element) {
@@ -221,7 +217,7 @@ class Calendar {
         return 32 - new Date(year, month, 32).getDate();
     }
     nextMonth() { // next month in calendar
-        if (this.month == 11) {
+        if (this.month === 11) {
             this.month = 0;
             this.year += 1;
         } else {
@@ -232,7 +228,7 @@ class Calendar {
         this.createCalendar(this.month, this.year);
     }
     prevMonth() { // previous month in calendar
-        if (this.month == 0) {
+        if (this.month === 0) {
             this.month = 11;
             this.year -= 1;
         } else {
@@ -266,7 +262,7 @@ $("#editEvent").click(function () {
 });
 
 $("#addEventDate, #editEventDate").datepicker({
-    dateFormat: "MM d",
+    dateFormat: "MM d yy",
     firstDay: 1
 });
 
