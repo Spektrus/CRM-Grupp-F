@@ -47,7 +47,7 @@ class Events {
         $("#events").empty();
         $(".calendarEvent").remove();
         for (let i = 0; i < this.eventList.length; i++) {
-            if (this.eventList[i].date.getMonth() === calendar.month) {
+            if (this.eventList[i].date.getMonth() === calendar.month && this.eventList[i].date.getFullYear() === calendar.year) {
                 $("#day" + this.eventList[i].date.getDate()).append("<span class='calendarEvent'>" + this.eventList[i].date.toLocaleTimeString("sv-SE", {
                     timeStyle: "short"
                 })+"<span class='calendarTitle'>" + this.eventList[i].title + "</span></span>");
