@@ -51,9 +51,10 @@ class Events {
                     timeStyle: "short"
                 })+"<span class='calendarTitle'>" + this.eventList[i].title + "</span></span>");
             }
+            let monthName = new Intl.DateTimeFormat("en-US", calendar.options).format(this.eventList[i].date);
             let eventCard = "<div class='eventCard'><h3 class='eventTitle'>" + this.eventList[i].title + "</h3><span class='eventTime'>" + this.eventList[i].date.toLocaleTimeString("sv-SE", {
                 timeStyle: "short"
-            }) + "</span><span class='eventDate'>" + calendar.monthName[this.eventList[i].date.getMonth()] + " " + this.eventList[i].date.getDate() + "&nbsp;</span>" + "<p>" + this.eventList[i].body + "</p>" + this.call + this.email + this.delete + this.edit + "</div>";
+            }) + "</span><span class='eventDate'>" + monthName + " " + this.eventList[i].date.getDate() + "&nbsp;</span>" + "<p>" + this.eventList[i].body + "</p>" + this.call + this.email + this.delete + this.edit + "</div>";
             $("#events").append(eventCard);
         }
         $('[data-toggle="popover"]').popover({
@@ -142,12 +143,12 @@ class Calendar {
         this.currentMonth = this.date.getMonth();
         this.month = this.date.getMonth();
         this.year = this.date.getFullYear();
-        this.monthName = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
     }
     createCalendar(month, year) {
-        this.date.setMonth(month);
+        this.date.setMonth(month, 1);
         this.date.setYear(year);
-        console.log("Månad nr: " + (month+1) + "\nMånad namn: " + this.monthName[month]);
+        let monthName = new Intl.DateTimeFormat("en-US", this.options).format(this.date); // name of month
+        console.log("Månad nr: " + (month+1) + "\nMånad namn: " + monthName);
         let firstDay = (new Date(year, month)).getDay(); // gets first day of month
         if (firstDay == 6) { // changes javascript date function to return monday as first day of the week
             firstDay = 0;
@@ -201,7 +202,7 @@ class Calendar {
             $(".week6").append("<td id='day"+currentDay+"'>" + day + "</td>");
         }
 
-        $("#calendarMonth").prepend(this.monthName[month]);
+        $("#calendarMonth").prepend(monthName);
         $("#calendarYear").html(this.year);
         if (this.month == this.currentMonth && this.year == this.currentYear) {
             $(".days tr td").each(function (index, element) {
