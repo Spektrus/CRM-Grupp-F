@@ -189,6 +189,11 @@ class Calendar {
             $(".week5").append("<td id='day"+currentDay+"'>" + day + "</td>");
             currentDay++;
         }
+        if (currentDay < 32) {  // border bottom not showing fix
+            $(".days").append("<tr class='week6'></tr>");
+        } else {
+            $(".week6").remove();
+        }
         for (currentDay; currentDay <= days; currentDay++) { // handles last week shenanigans when first day is sunday
             let day = currentDay;
             if (firstDay == 6) {
@@ -196,9 +201,6 @@ class Calendar {
                 if (currentDay > 31) {
                     day = "";
                 }
-            }
-            if (day > days) {
-                day = "";
             }
             $(".week6").append("<td id='day"+currentDay+"'>" + day + "</td>");
         }
