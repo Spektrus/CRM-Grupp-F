@@ -148,7 +148,6 @@ class Calendar {
         this.date.setMonth(month, 1);
         this.date.setYear(year);
         let monthName = new Intl.DateTimeFormat("en-US", this.options).format(this.date); // name of month
-        console.log("Månad nr: " + (month + 1) + "\nMånad namn: " + monthName);
         let firstDay = (new Date(year, month)).getDay(); // gets first day of month
         if (firstDay === 0) { // changes javascript date function to return monday as first day of the week
             firstDay = 6;
