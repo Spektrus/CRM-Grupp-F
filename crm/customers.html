@@ -57,8 +57,8 @@
           <tr>
             <th scope="col">#</th>
             <th scope="col">Name</th>
-            <th scope="col">Phone Number</th>
-            <th scope="col">Email</th>
+            <th class="d-none d-lg-table-cell" scope="col">Phone</th>
+            <th class="d-none d-sm-table-cell" scope="col">Email</th>
           </tr>
         </thead>
         <tbody id="customerTbody">
@@ -79,10 +79,10 @@
           </button>
         </div>
         <div class="modal-body">
-          <input class="form-control" id="customerNameInput" type="text" placeholder="Name">
-          <input class="form-control" id="customerPhoneInput" type="text" placeholder="Phone">
-          <input class="form-control" id="customerEmailInput" type="text" placeholder="Email">
-          <textarea class="form-control" id="customerAdditionalInput" placeholder="Additional Information"></textarea>
+          <input class="form-control customerInput" id="customerNameInput" type="text" placeholder="Name">
+          <input class="form-control customerInput" id="customerPhoneInput" type="text" placeholder="Phone">
+          <input class="form-control customerInput" id="customerEmailInput" type="text" placeholder="Email">
+          <textarea class="form-control customerInput" id="customerAdditionalInput" placeholder="Additional Information"></textarea>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
@@ -98,16 +98,16 @@
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Add Customer</h5>
+          <h5 class="modal-title" id="exampleModalLabel">Customer information</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
         <div class="modal-body">
-          <input class="form-control" id="customerNameVal" type="text">
-          <input class="form-control" id="customerPhoneVal" type="text">
-          <input class="form-control" id="customerEmailVal" type="text">
-          <textarea class="form-control" id="customerAdditionalVal"></textarea>
+          <input class="form-control customerEditInput" id="customerNameVal" type="text">
+          <input class="form-control customerEditInput" id="customerPhoneVal" type="text">
+          <input class="form-control customerEditInput" id="customerEmailVal" type="text">
+          <textarea class="form-control customerEditInput" id="customerAdditionalVal"></textarea>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
