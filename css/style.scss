@@ -116,25 +116,38 @@ main {
             cursor: pointer;
             color: colors.$titleColor;
         }
-
+    }
+    table {
+        border-bottom: 2px solid colors.$borderColor;
     }
     .weekdays {
         border-right: 2px solid colors.$borderColor;
         border-left: 2px solid colors.$borderColor;
         background-color: colors.$lightDark;
     }
-    
     .weekdays th {
         color: colors.$subTitleColor;
     }
-    
     .days {
         border: 2px solid colors.$borderColor;
         background: colors.$darkerDark;
     }
-    
     .days td.active {
         color: colors.$titleColor;
+    }
+    .calendarEvent {
+        max-width: 100%;
+        display: block;
+        color: colors.$textColor;
+        background-color: colors.$lightDark;
+        border-radius: 4px;
+        border: 2px solid colors.$borderColor;
+    }
+    .calendarTitle {
+        display: none;
+    }
+    .tr:empty {
+        display: none;
     }
 }
 
@@ -299,4 +312,24 @@ margin-top: 15%;
 
 margin-top: 3px;
 margin-right: 5%;
+}
+
+@media screen and (min-width: 768px) {
+    .calendarEvent {
+        margin: auto;
+        width: 50%;
+    }
+}
+@media screen and (max-width: 768px) {
+    .table td, table th {
+        padding: 0.5rem !important;
+    }
+    .calendarEvent {
+        font-size: 75%;
+    }
+}
+@media screen and (max-width: 350px) {
+    .table td, table th {
+        padding: 0.25rem !important;
+    }
 }

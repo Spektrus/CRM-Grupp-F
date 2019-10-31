@@ -5,8 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>KAMSystems - Home</title>
     <script src="../login.js"></script>
+    <link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
@@ -36,7 +37,6 @@
                         <a class="nav-link" href="history.html">History</a>
                     </li>
                 </ul>
-
                 <ul class="nav navbar-nav ml-auto">
                     <li class="nav-item">
                         <button type="button" onclick="logOut()" class="btn">Sign out</button>
@@ -50,31 +50,6 @@
         <button type="button" class="btn" id="newEvent" data-target="#addNewEvent" data-toggle="modal">Add new event</button>
         <div class="row">
             <div id="events" class="col-md-4">
-                <div class="eventCard">
-                    <h3 class="eventTitle">Call Jessica</h3>
-                    <span class="eventTime">12:00</span>
-                    <span class="eventDate">October 25&nbsp;</span>
-                    <p class="eventInfo">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptates, facere? Eaque excepturi sunt ad pariatur tempore, ipsam atque, cupiditate nemo quibusdam dolorem corrupti laudantium at exercitationem. Illum nulla incidunt maxime?</p>
-                    <a tabindex="0" data-toggle="popover" data-placement="bottom" data-html="true"
-                        data-content="<a href='#'>Call with phone</a><br><a href='#'>Call with Skype</a>"><img
-                            class="phone" src="../images/phone.png"></a>
-                    <a href="mailto:jessica@alba.com"><img class="email" src="../images/mail.png"></a>
-                    <img src="../images/delete.png" class="delete">
-                    <img src="../images/edit.png" class="edit" data-target="#editCurrEvent" data-toggle="modal">
-
-                </div>
-                <div class="eventCard">
-                    <h3 class="eventTitle">Call Jessica</h3>
-                    <span class="eventTime">12:00</span>
-                    <span class="eventDate">October 25&nbsp;</span>
-                    <p class="eventInfo">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptates, facere? Eaque excepturi sunt ad pariatur tempore, ipsam atque, cupiditate nemo quibusdam dolorem corrupti laudantium at exercitationem. Illum nulla incidunt maxime?</p>
-                    <a tabindex="0" data-toggle="popover" data-placement="bottom" data-html="true"
-                        data-content="<a href='#'>Call with phone</a><br><a href='#'>Call with Skype</a>"><img
-                            class="phone" src="../images/phone.png"></a>
-                    <a href="mailto:jessica@alba.com"><img class="email" src="../images/mail.png"></a>
-                    <img src="../images/delete.png" class="delete">
-                    <img src="../images/edit.png" class="edit" data-target="#editCurrEvent" data-toggle="modal">
-                </div>
             </div>
             
             <div id="calendar" class="col-md-8">
@@ -111,7 +86,8 @@
                         </tr>
                         <tr class="week5">
                         </tr>
-                        <tr class="week6"></tr>
+                        <tr class="week6">
+                        </tr>
                     </tbody>
                 </table>
             </div>
@@ -152,12 +128,12 @@
                                 <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
-                        <div class="modal-body" id="addEventModal">
+                        <div class="modal-body" id="editEventModal">
                             <input class="form-control editInput" id="editEventTitle" type="text" maxlength="25" placeholder="Title">
                             <!--<input class="form-control" id="eventPerson" type="text"
                                 placeholder="Placeholder choosing customers">-->
-                            <input class="form-control editInput" id="editEventTime" type="time" placeholder="Date">
                             <input class="form-control editInput" id="editEventDate" type="text" placeholder="Date">
+                            <input class="form-control editInput" id="editEventTime" type="time" placeholder="Date">
                             <textarea class="form-control editInput" id="editEventTextArea" rows="5" cols="50"
                                 placeholder="Text..."></textarea>
                         </div>
