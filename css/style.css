@@ -288,6 +288,10 @@ th {
   margin-right: 5%;
 }
 
+.label_deal{
+  color:#31e89f;
+}
+
 @media screen and (min-width: 768px) {
   .calendarEvent {
     margin: auto;

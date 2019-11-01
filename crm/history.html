@@ -29,11 +29,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="customers.html">Customers</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="deals.html">Deals</a>
-                    </li>
+                    
                     <li class="nav-item active">
-                        <a class="nav-link" href="history.html">History</a>
+                        <a class="nav-link" href="history.html">Deals & History</a>
                     </li>
                 </ul>
 
@@ -53,23 +51,23 @@
      
        <!--Add deal-->
        <div class="col md-4">
-            <h1>Finshed Deals</h1>
+            <h1>Finshed Deals & Meetings</h1>
             <br>
             <form>
               <div class="form-group">
-                <label for="formGroupExampleInput">Name</label>
+                <label class="label_deal" for="formGroupExampleInput">Name</label>
                 <input type="text" class="form-control" id="deal_name" placeholder="Name">
               </div>
               <div class="form-group">
-                <label for="formGroupExampleInput2">Company</label>
+                <label  class="label_deal" for="formGroupExampleInput2">Company</label>
                 <input type="text" class="form-control" id="deal_company" placeholder="Company">
               </div>
               <div class="form-group">
-                    <label for="formGroupExampleInput2">Deal</label>
+                    <label  class="label_deal" for="formGroupExampleInput2">Deal</label>
                     <input type="text" class="form-control" id="deal_deal" placeholder="What deals did you strike?">
                   </div>
                   <div class="form-group">
-                        <label for="formGroupExampleInput2">Date</label>
+                        <label  class="label_deal" for="formGroupExampleInput2">Date</label>
                         <input type="date" class="form-control" id="deal_date"  placeholder="Pick a date">
                       </div>
                       <button id="deal_btn" type="button" class="btn" onclick="addDealToHistory()">Add deal to history</button>
