@@ -31,8 +31,8 @@ class Events {
             body: "Löksås ipsum erfarenheter nya hwila inom tre tid på flera trevnadens att av enligt, söka i är bland färdväg sjö se faktor är träutensilierna ta. Plats olika söka rännil har när det enligt regn, strand jäst gör blev strand oss sista flera tiden, inom söka stora som björnbär hwila oss och, som både dock träutensilierna regn i har."
 
         }];
-        this.eventList[0].date = new Date("2019 10 30 15:00");
-        this.eventList[1].date = new Date("2019 10 31 17:00");
+        this.eventList[0].date = new Date("2019 11 15 15:00");
+        this.eventList[1].date = new Date("2019 11 18 17:00");
     }
 
     sortByDate() {
