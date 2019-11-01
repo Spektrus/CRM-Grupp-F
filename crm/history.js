@@ -2,7 +2,7 @@ let historyName;
 let historyCompany;
 let historyDate;
 let historyEvent;
-let historyPeople= []
+let historyTableArray= []
 
 
 
@@ -20,34 +20,39 @@ $.ajax({
          historyDate = data[i].date;
          historyEvent = data[i].Event;
 
-
-        
-         historyPeople.push(historyName, historyCompany, historyDate, historyEvent);
-         
+         addHistoryToTableArray(historyName, historyCompany, historyDate, historyEvent);
+         printHistory();
        
       }
-      //historyPeople = data;
-
-    
       
-      printHistory();
+   
     
     });
 
-   
-
-    console.log(historyPeople);
+  
+    console.log();
     
  
-    function printHistory() {
+    function printHistory(name, Company, date, Event) {
       
       $("#historyTbody").empty();
-      for (let i = 0; i < historyPeople.length; i++) {
-          $("#historyTbody").append("<tr id='cID" + i + "' data-toggle='tooltip' data-placement='bottom'" + "<th scope='row'>" + historyPeople[i] + "</th>" + "<td>" + historyPeople[i].historyName + "</td>" + "<td  d-none d-lg-table-cell'>" + historyPeople[i].historyCompany + "</td>" + "<td d-none d-sm-table-cell'>" + historyPeople[i].historyEvent + "</td>" +  + "<td>" + historyPeople[i].historyEvent+ "</td>" +  + "<td>" + historyPeople[i].historyDate+ "</td>" + "</tr>");
+      for (let i = 0; i < historyTableArray.length; i++) {
+          $("#historyTbody").append("<tr id='cID" + i + "' data-toggle='tooltip' data-placement='bottom' title=''>" + "<th scope='row'>" + i + "</th>" + "<td class='cName'>" + historyTableArray[i].name + "</td>" + "<td d-none d-lg-table-cell'>" + historyTableArray[i].company + "</td>" + "<td class='cMail d-none d-sm-table-cell'>" + historyTableArray[i].event + "</td>"  + "<td class='cMail d-none d-sm-table-cell'>" + historyTableArray[i].date + "</td>" + "</tr>");
       }
       $('[data-toggle="tooltip"]').tooltip({
           trigger: 'hover'
       });
   }
+
+  function addHistoryToTableArray(name,Company, date, Event) {
+    let objC = {
+        name: name,
+        company: Company,
+        date: date,
+        event: Event
+    };
+
+    historyTableArray.push(objC);
+}
     
 
