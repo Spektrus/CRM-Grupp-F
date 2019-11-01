@@ -21,6 +21,7 @@ $.ajax({
          historyEvent = data[i].Event;
 
          addHistoryToTableArray(historyName, historyCompany, historyDate, historyEvent);
+
          printHistory();
        
       }
@@ -53,6 +54,34 @@ $.ajax({
     };
 
     historyTableArray.push(objC);
+}
+
+function addDealToHistory(){
+ 
+  document.getElementById("deal_btn").addEventListener("click",function(){
+  
+   let dealname = document.getElementById("deal_name").value;
+   let dealcompany = document.getElementById("deal_company").value;
+   let deal_deal = document.getElementById("deal_deal").value;
+   let deal_date = document.getElementById("deal_date").value;
+
+    //console.log(dealname + "" , dealcompany + deal_deal+ deal_date);
+
+    let objD = {
+      name : dealname,
+      company : dealcompany,
+      event : deal_deal,
+      date : deal_date
+    };
+
+    historyTableArray.push(objD);
+    printHistory();
+
+    console.log(historyTableArray);
+
+
+  } )
+ 
 }
     
 

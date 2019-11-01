@@ -47,11 +47,38 @@
     </header>
 
     <main>
+
+    <div id="dealcontainer">
         <div class="row">
      
-       
-    
-            <div class="col md-12">
+       <!--Add deal-->
+       <div class="col md-4">
+            <h1>Finshed Deals</h1>
+            <br>
+            <form>
+              <div class="form-group">
+                <label for="formGroupExampleInput">Name</label>
+                <input type="text" class="form-control" id="deal_name" placeholder="Name">
+              </div>
+              <div class="form-group">
+                <label for="formGroupExampleInput2">Company</label>
+                <input type="text" class="form-control" id="deal_company" placeholder="Company">
+              </div>
+              <div class="form-group">
+                    <label for="formGroupExampleInput2">Deal</label>
+                    <input type="text" class="form-control" id="deal_deal" placeholder="What deals did you strike?">
+                  </div>
+                  <div class="form-group">
+                        <label for="formGroupExampleInput2">Date</label>
+                        <input type="date" class="form-control" id="deal_date"  placeholder="Pick a date">
+                      </div>
+                      <button id="deal_btn" type="button" class="btn" onclick="addDealToHistory()">Add deal to history</button>
+            </form>
+                
+               
+            </div>
+              <!--History -->
+            <div class="col md-8">
                     <h1>History</h1>
                 <ul class="nav justify-content-end">
                     <li class="nav-item">
@@ -78,8 +105,11 @@
                 </table>
                
             </div>
+
+
+
         </div>
-    </div>
+    
     </main>
 
     
