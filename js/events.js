@@ -41,7 +41,7 @@ class Events {
         });
     }
 
-    displayEvents() {
+    displayEvents() { // gets events from array of objects and displays them on the site
         this.sortByDate();
         $("#events").empty();
         $(".calendarEvent").remove();
