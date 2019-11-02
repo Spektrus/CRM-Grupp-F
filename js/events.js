@@ -1,17 +1,3 @@
-class CRM {
-    createCustomers(amount) {
-        $.ajax({
-            url: "https://randomuser.me/api?results=" + amount + "",
-            dataType: 'json',
-            success: function (data) {
-                let customers = data.results;
-                console.log(data.results);
-                return customers;
-            }
-        });
-    }
-}
-
 class Events {
     constructor() {
         this.index;
@@ -279,10 +265,3 @@ $(document).on("click", ".delete", function () {
 $(document).on("click", ".edit", function () {
     events.getEventInfo($(this));
 });
-
-function logOut() { // deletes cookie on logout
-    document.cookie = "login=false; expires=Thu, 01 Jan 1970 00:00:01 UTC; path=/;"
-    if (document.cookie !== "login=true") {
-        window.location.href = "../";
-    }
-}
