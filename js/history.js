@@ -38,7 +38,7 @@ function printHistory(name, Company, date, Event) {
 
   $("#historyTbody").empty();
   for (let i = 0; i < historyTableArray.length; i++) {
-    $("#historyTbody").append("<tr id='cID" + i + "' data-toggle='tooltip' data-placement='bottom' title=''>" + "<th scope='row'>" + i + "</th>" + "<td class='cName'>" + historyTableArray[i].name + "</td>" + "<td d-none d-lg-table-cell'>" + historyTableArray[i].company + "</td>" + "<td class='cMail d-none d-sm-table-cell'>" + historyTableArray[i].event + "</td>" + "<td class='cMail d-none d-sm-table-cell'>" + historyTableArray[i].date + "</td>" + "</tr>");
+    $("#historyTbody").append("<tr id='cID" + i + "' data-toggle='tooltip' data-placement='bottom' title=''>" + "<th scope='row'>" + (i+1) + "</th>" + "<td class='cName'>" + historyTableArray[i].name + "</td>" + "<td d-none d-lg-table-cell'>" + historyTableArray[i].company + "</td>" + "<td class='cMail d-none d-sm-table-cell'>" + historyTableArray[i].event + "</td>" + "<td class='cMail d-none d-sm-table-cell'>" + historyTableArray[i].date + "</td>" + "</tr>");
   }
  
 }
