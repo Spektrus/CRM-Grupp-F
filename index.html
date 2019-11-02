@@ -14,24 +14,24 @@
 
 <body>
 
-        <div id="login_alert" class="alert alert-danger alert-dismissible fade show hidden " role="alert">
-                <strong>Denied Access!</strong> Wrong username or password!
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
+    <div id="login_alert" class="alert alert-danger alert-dismissible fade hidden" role="alert">
+        <strong>Denied Access!</strong> Wrong username or password!
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
 
     <div class="container">
         <div class="d-flex align-items-center flex-column login_wrap justify-content-center text-center">
             <img id="loginLogo" src="images/logo.png">
             <form>
                 <div class="form-group">
-                    <label  for="exampleInputEmail1">Username</label>
+                    <label for="exampleInputEmail1">Username</label>
                     <input type="text" id="loginuser" class="form-control logininput" id="exampleInputEmail1"
                         aria-describedby="emailHelp">
                 </div>
                 <div class="form-group">
-                    <label  for="exampleInputPassword1">Password</label>
+                    <label for="exampleInputPassword1">Password</label>
                     <input type="password" id="loginpw" class="form-control logininput" id="exampleInputPassword1">
                 </div>
                 <button type="button" onclick="logIn()" id="login_btn" class="btn">Sign In</button>
@@ -39,7 +39,7 @@
         </div>
     </div>
 
-    
+
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>

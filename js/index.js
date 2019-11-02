@@ -28,7 +28,7 @@ function logIn() {
             return;
         }
     }
-    $(".hidden").removeClass("hidden")
+    $(".hidden").addClass("show");
     //alert("Wrong username or password");
 
 }
