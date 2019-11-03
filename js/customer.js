@@ -11,7 +11,7 @@ let phone;
 let email;
 let additional;
 let info;
-let dummyCustomer = 10;
+let dummyCustomer = 20;
 
 /**
  * Gets some random customer from the randomuser api 
@@ -84,7 +84,7 @@ function printCustomerToTable(name, phone, email) {
     // $("#customerTbody").append("<tr id='cID" + (customerTableArray.length) + "'>" + "<th scope='row'>" + (customerTableArray.length) + "</th>" + "<td class='cName'>" + name +"</td>" + "<td class='cPhone'>" + phone +"</td>" + "<td class='cMail'>" + email +"</td>" + "</tr>");
     $("#customerTbody").empty();
     for (let i = 0; i < customerTableArray.length; i++) {
-        $("#customerTbody").append("<tr id='cID" + i + "' data-toggle='tooltip' data-placement='bottom' title='Click for more information'>" + "<th scope='row'>" + (i+1) + "</th>" + "<td class='cName'>" + customerTableArray[i].name + "</td>" + "<td class='cPhone d-none d-lg-table-cell'>" + customerTableArray[i].phoneNr + "</td>" + "<td class='cMail d-none d-sm-table-cell'>" + customerTableArray[i].mail + "</td>" + "</tr>");
+        $("#customerTbody").append("<tr id='cID" + i + "'>" + "<th scope='row'>" + (i+1) + "<img src='../images/edit.png' style='width: 25px; margin-left: 10px;' data-toggle='tooltip' data-placement='bottom' title='Click for more information'></img>" + "</th>" + "<td class='cName'>"  + customerTableArray[i].name + "</td>" + "<td class='cPhone d-none d-lg-table-cell'>" + customerTableArray[i].phoneNr + "</td>" + "<td class='cMail d-none d-sm-table-cell'>" + customerTableArray[i].mail + "</td>" + "</tr>");
     }
     $('[data-toggle="tooltip"]').tooltip({
         trigger: 'hover'
