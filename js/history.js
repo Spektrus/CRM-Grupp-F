@@ -6,7 +6,7 @@ let historyTableArray = []
 
 
 
-
+// loading some random users to fill in the first 6 events and history
 
 $.ajax({
   method: "GET",
@@ -34,7 +34,7 @@ $.ajax({
 console.log();
 
 
-function printHistory(name, Company, date, Event) {
+function printHistory() { //Printing a table for every object in my array with random people
 
   $("#historyTbody").empty();
   for (let i = 0; i < historyTableArray.length; i++) {
@@ -43,20 +43,20 @@ function printHistory(name, Company, date, Event) {
  
 }
 
-function addHistoryToTableArray(name, Company, date, Event) {
-  let objC = {
+function addHistoryToTableArray(name, Company, date, Event) { // Saving the people as an object and pushing it to my array
+  let objectHistory = {
     name: name,
     company: Company,
     date: date,
     event: Event
   };
 
-  historyTableArray.push(objC);
+  historyTableArray.push(objectHistory);
 }
 
 function addDealToHistory() {
 
-  
+  // taking the value of input and giving it a variable
 
     let dealname = document.getElementById("deal_name").value;
     let dealcompany = document.getElementById("deal_company").value;
@@ -66,16 +66,14 @@ function addDealToHistory() {
     //console.log(dealname + "" , dealcompany + deal_deal+ deal_date);
 
 
-    if (dealname == "" || dealcompany == "" || deal_deal == "") {
+    if (dealname == "" || dealcompany == "" || deal_deal == "") { //checks if there is any empty fields
 
-      $(".hidden").addClass("show").fadeIn( 300 ).delay( 1500 ).fadeOut( 400 );
+      $(".hidden").addClass("show").fadeIn( 300 ).delay( 1500 ).fadeOut( 400 ); //alerts the user 
 
-      //alert("No input!")
-      //return;
 
     } else {
 
-      let objD = {
+      let dealObject = {
         name: dealname,
         company: dealcompany,
         event: deal_deal,
@@ -83,9 +81,9 @@ function addDealToHistory() {
 
       };
 
-      historyTableArray.push(objD);// pushar upp det nya objektet i arreyen med alla objekt
-      printHistory();//Skirver ut objektet från arrayen
-      resetForm(); // kallar på funktionen som tömmer inputfälten
+      historyTableArray.push(dealObject);// take the new object and pushing it to the array with api objects
+      printHistory();//printing the new object 
+      resetForm(); // call the function that resets the inputfields
 
     }
 
@@ -93,7 +91,7 @@ function addDealToHistory() {
 
 }
 
-function resetForm() {
+function resetForm() { //resets all the input fields
 
   document.getElementById("myForm").reset();
 

@@ -55,7 +55,7 @@
     <div id="dealcontainer">
         <div class="row">
      
-       <!--Add deal-->
+       <!--Add a deal-->
        <div class="col md-4">
             <h1>Finished Deals & Meetings</h1>
             <br>
@@ -78,10 +78,13 @@
                       </div>
                       <button id="deal_btn" type="button" class="btn" onclick="addDealToHistory()">Add deal to history</button>
             </form>
-                
+                <br>
                
             </div>
               <!--History -->
+
+             
+
             <div class="col md-8">
                     <h1>History</h1>
                 <ul class="nav justify-content-end">
@@ -91,27 +94,18 @@
                 <table class="table">
                     <thead>
                         <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">Name</th>
-                            <th scope="col">Company</th>
-                            <th scope="col">Event</th>
-                            <th scope="col">Date</th>
-                            
-    
-                         
+                                <th scope="col">#</th>
+                                <th scope="col">Name</th>
+                                <th scope="col">Company</th>
+                                <th class="d-none d-lg-table-cell" scope="col">Event</th>
+                                <th class="d-none d-sm-table-cell" scope="col">Date</th>
+                               
                         </tr>
                     </thead>
                     <tbody id="historyTbody">
-                    
-                        
                     </tbody>
-                   
                 </table>
-               
             </div>
-
-
-
         </div>
     
     </main>
