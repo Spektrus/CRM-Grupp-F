@@ -17,7 +17,7 @@ $.ajax({
     for (let i = 0; i < data.length; i++) {
       historyName = data[i].name;
       historyCompany = data[i].Company;
-      historyDate = data[i].date;
+      historyDate = ("2019-11-04");
       historyEvent = data[i].Event;
 
       addHistoryToTableArray(historyName, historyCompany, historyDate, historyEvent);
