@@ -56,7 +56,7 @@ function addHistoryToTableArray(name, Company, date, Event) {
 
 function addDealToHistory() {
 
-  document.getElementById("deal_btn").addEventListener("click", function () {
+  
 
     let dealname = document.getElementById("deal_name").value;
     let dealcompany = document.getElementById("deal_company").value;
@@ -66,11 +66,12 @@ function addDealToHistory() {
     //console.log(dealname + "" , dealcompany + deal_deal+ deal_date);
 
 
-    if (dealname == "", dealcompany == "", deal_deal == "") {
+    if (dealname == "" || dealcompany == "" || deal_deal == "") {
 
+      $(".hidden").addClass("show").fadeIn( 300 ).delay( 1500 ).fadeOut( 400 );
 
-      alert("No input!")
-
+      //alert("No input!")
+      //return;
 
     } else {
 
@@ -88,11 +89,7 @@ function addDealToHistory() {
 
     }
 
-
     console.log(historyTableArray);
-
-
-  })
 
 }
 
