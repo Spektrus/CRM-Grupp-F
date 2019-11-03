@@ -4,7 +4,8 @@ let historyDate;
 let historyEvent;
 let historyTableArray = []
 
-
+//var str = "Hello world!";
+//var res = str.slice(0, 5);
 
 // loading some random users to fill in the first 6 events and history
 
@@ -14,10 +15,16 @@ $.ajax({
 })
   .done(function (data) {
 
+   
     for (let i = 0; i < data.length; i++) {
+
+      let oldDate = data[i].date; 
+      let newDate = oldDate.slice(0,10); //slice the date for the right format
+      
+
       historyName = data[i].name;
       historyCompany = data[i].Company;
-      historyDate = ("2019-11-04");
+      historyDate = newDate;
       historyEvent = data[i].Event;
 
       addHistoryToTableArray(historyName, historyCompany, historyDate, historyEvent);
