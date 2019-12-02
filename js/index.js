@@ -9,6 +9,10 @@ var loginUser = [{
     {
         username: "mathias",
         password: "admin"
+    },
+    {
+        username: "",
+        password: ""
     }
 ]
 
